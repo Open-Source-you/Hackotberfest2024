@@ -1,0 +1,202 @@
+$grey: #222;
+$grey1: #333;
+$wt: #fff;
+$bl: #000;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: $grey;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.finishLine {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 1;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: opacity 1600ms, top 1000ms;
+  background: rgba(0, 0, 0, 0.6);
+  &.hidden {
+    opacity: 0;
+    top: -1000px;
+  }
+  .finishImg {
+    width: 100%;
+    max-width: 840px;
+    height: 620px;
+    background: url("img/finish-line.png") no-repeat center center;
+    background-size: cover;
+  }
+  .winner {
+    text-align: center;
+    h2 {
+      margin: 0;
+      color: $wt;
+      font-size: 40px;
+      font-weight: 400;
+    }
+    .playAgain {
+      margin: 10px 0 0 0;
+      background: $grey;
+      color: $wt;
+      padding: 14px 30px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      outline: none;
+      font-size: 17px;
+      transition: 0.3s ease-in-out;
+      &:hover {
+        background: lighten($color: $grey, $amount: 3%);
+      }
+    }
+  }
+}
+
+.player-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  .square {
+    width: 100%;
+    max-width: 160px;
+    height: 80px;
+    background: $grey1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    &.start,
+    &.finish {
+      background: darken($color: $grey1, $amount: 5%);
+    }
+    &.backward {
+      img {
+        width: 64px;
+      }
+    }
+  }
+}
+
+.road-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+  overflow: hidden;
+  .player {
+    width: 160px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: margin-left 1000ms;
+    img {
+      width: 100%;
+    }
+  }
+  .road-lines {
+    display: flex;
+    justify-content: space-between;
+    span {
+      width: 100%;
+      max-width: 80px;
+      border: 4px solid darken($color: $grey1, $amount: 3%);
+    }
+  }
+}
+
+.dice-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .firstPlayerRoll,
+  .secondPlayerRoll {
+    width: 100%;
+    max-width: 320px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .title {
+      color: $wt;
+      margin: 0;
+      font-size: 30px;
+      line-height: 1;
+      text-align: center;
+    }
+    .dice-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .dice {
+        width: 100%;
+        max-width: 120px;
+        height: 120px;
+      }
+      .rollDiceOne,
+      .rollDiceTwo {
+        width: 100%;
+        max-width: 120px;
+        height: 120px;
+        background: url("img/diceRoll.png") no-repeat center center;
+        background-size: cover;
+        cursor: pointer;
+        &.active {
+          animation: shake 2s infinite cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 20px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, -20px);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, -20px, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}

@@ -1,0 +1,1105 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 200px;
+  height: 400px;
+  position: relative;
+}
+
+.homeBtn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background: #222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main > h1 {
+  color: #fff;
+}
+
+.main > h1 span {
+  color: #60a4fb;
+}
+
+.main .notesPageContainer {
+  background: #efeff4;
+  padding: 0 10px;
+}
+
+.main .notesPageContainer .heading {
+  padding: 8px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.main .notesPageContainer .heading .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .notesPageContainer .heading .menu i {
+  margin-right: 10px;
+}
+
+.main .notesPageContainer .heading .menu h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.main .notesPageContainer .searchBar {
+  width: 100%;
+  position: relative;
+}
+
+.main .notesPageContainer .searchBar::after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  content: "\f002";
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 14px;
+  left: 8px;
+  color: #c7c7d1;
+}
+
+.main .notesPageContainer .searchBar input {
+  width: 100%;
+  border: none;
+  padding: 10px 0 10px 26px;
+  outline: none;
+  position: relative;
+  border-radius: 6px;
+}
+
+.main .notesPageContainer .searchBar input::-webkit-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .notesPageContainer .searchBar input:-ms-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .notesPageContainer .searchBar input::-ms-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .notesPageContainer .searchBar input::placeholder {
+  color: #c7c7d1;
+}
+
+.main .notesPageContainer .noteWrap {
+  margin: 10px 0;
+}
+
+.main .notesPageContainer .noteWrap .note {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e4e4f1;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+.main .notesPageContainer .noteWrap .note p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.main .notesPageContainer .noteWrap .note span {
+  font-size: 11px;
+  color: #b2b2bd;
+  font-weight: 300;
+  margin: 0;
+}
+
+.main .phoneContainer {
+  width: 300px;
+  height: 600px;
+  margin: auto;
+  background: url("./img/phone.png") no-repeat center center;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.main .phoneContainer #batteryIcon {
+  position: absolute;
+  right: 60px;
+  top: 84px;
+  color: #325e32;
+}
+
+.main .phoneContainer .loginPageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .phoneContainer .loginPageContainer .notifications {
+  width: 100%;
+  padding: 14px 0;
+}
+
+.main .phoneContainer .loginPageContainer .notifications .row {
+  width: 90%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 auto 10px auto;
+}
+
+.main .phoneContainer .loginPageContainer .notifications .row p {
+  margin: 0;
+  font-size: 12px;
+  color: #fff;
+}
+
+.main .phoneContainer .loginPageContainer .notifications .row p i {
+  color: #9147ff;
+  margin-right: 5px;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap {
+  width: 100%;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap .userLogin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 70px;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap .userLogin p {
+  margin: 6px 0;
+  color: #fff;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap .userLogin input {
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 10px #9147ff;
+          box-shadow: 0 0 10px #9147ff;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap .clock {
+  width: 100px;
+  padding: 10px 0;
+  margin: 14px 0;
+  text-align: center;
+}
+
+.main .phoneContainer .loginPageContainer .loginWrap .clock p {
+  color: #fff;
+  margin: 0;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 140px;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageClock {
+  width: 100%;
+  padding: 6px;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageClock p {
+  color: #fff;
+  margin: 0;
+  font-size: 22px;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageWeather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageWeather .weatherIcon img {
+  width: 80px;
+  height: 80px;
+  margin-right: 6px;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageWeather .weatherWrap {
+  margin: 8px 0 0 0;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageWeather .weatherWrap .weatherCity {
+  color: #fff;
+  font-size: 21px;
+  text-shadow: 2px 4px 3px #000;
+  margin: 4px 0;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageHeading .homePageWeather .weatherWrap .weatherTemp {
+  margin: 0;
+  text-shadow: 2px 4px 3px #000;
+  color: #fff;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageMenu {
+  width: 94%;
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: space-evenly;
+      align-content: space-evenly;
+  margin: 24px auto;
+}
+
+.main .phoneContainer .loginPageContainer .homePageContainer .homePageMenu .menuIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer {
+  background: #efeff4;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer h2 {
+  margin: 6px 0;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row {
+  width: 100%;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 6px 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row.compass {
+  margin-bottom: 31px;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row.removeBorder::after {
+  border: none;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row::after {
+  width: 76%;
+  content: "";
+  position: absolute;
+  border: 1px solid #efeff4;
+  bottom: 0;
+  right: 0;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row .rowContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row .rowContent img {
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row .rowContent p {
+  margin: 0;
+  color: #000;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .settingsContainer .settingsWrap .row i {
+  color: #cacad6;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer {
+  background: #efeef4;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .edit {
+  width: 100%;
+  text-align: right;
+  padding: 6px;
+  background: #f5f5f7;
+  cursor: pointer;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .edit p {
+  margin: 0;
+  color: #60a4fb;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .heading {
+  padding: 8px 12px;
+  background: #f5f5f7;
+  border-bottom: 1px solid #d2d2dd;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .heading h2 {
+  margin: 0;
+  line-height: 1;
+  font-size: 22px;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap {
+  margin: 20px 0;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row {
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 8px;
+  background: #fff;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row.outbox {
+  background: #d7d7e3;
+  margin: 20px 0;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row.first::after, .main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row.bd-bottom::after {
+  content: "";
+  position: absolute;
+  width: 78%;
+  border: 0.5px solid #d2d2dd;
+  bottom: 0;
+  right: 0;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row .rowInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row .rowInfo i {
+  color: #60a4fb;
+  margin-right: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .emailPageContainer .emailWrap .row .rowInfo p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer {
+  background: #d7d6d4;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer .heading {
+  padding: 8px 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer .heading p {
+  margin: 0;
+  color: #60a4fb;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer .heading p:nth-child(2) {
+  color: #000;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer .imgWrap {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .phoneContainer .loginPageContainer .galleryPageContainer .imgWrap img {
+  width: 33.3333%;
+  height: 65px;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer {
+  background: #f7f7f8;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .heading {
+  padding: 10px 14px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .heading p {
+  margin: 0;
+  color: #ff3b30;
+  font-size: 15px;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .heading p:nth-child(2) {
+  color: #000;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .heading i {
+  color: #ff3b30;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .row {
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid #efeff4;
+  border-bottom: 1px solid #efeff4;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .row .rowInfo h2 {
+  margin: 0;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .row .rowInfo p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.main .phoneContainer .loginPageContainer .alarmPageContainer .row i {
+  color: #4cd964;
+  font-size: 34px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer {
+  background: #efeff4;
+  padding: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .menu {
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .heading {
+  margin: 8px 0 14px 0;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .heading h2 {
+  margin: 0;
+  line-height: 1;
+  font-size: 23px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .heading span {
+  font-size: 11px;
+  color: #c5c5d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar {
+  width: 100%;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar::after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  content: "\f002";
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 14px;
+  left: 8px;
+  color: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar input {
+  width: 100%;
+  border: none;
+  padding: 8px 0 8px 26px;
+  outline: none;
+  position: relative;
+  border-radius: 50px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar input::-webkit-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar input:-ms-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar input::-ms-input-placeholder {
+  color: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .searchBar input::placeholder {
+  color: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap {
+  margin: 8px 0;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .title {
+  margin: 8px 0 8px 4px;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding: 6px 0;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #e6e6ec;
+  width: 76%;
+  right: 0;
+  bottom: 0;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .user span {
+  font-size: 10px;
+  color: #bfbfce;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #d3d3df;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .circle i {
+  color: #86868f;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .circle.profile {
+  background: url("./img/profile1.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .circle.profile.second {
+  background: url("./img/profile2.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo .circle.profile.third {
+  background: url("./img/profile3.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.main .phoneContainer .loginPageContainer .contactPageContainer .rowWrap .row .rowInfo p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer {
+  background: #c7c7d1;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .heading {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 8px;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .heading p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #fff;
+  padding: 10px 8px;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo::after {
+  content: "";
+  position: absolute;
+  width: 84%;
+  border: 0.5px solid #d2d2dd;
+  bottom: 0;
+  right: 0;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo.last::after {
+  border: none;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo .row p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo .row p.missedCall {
+  color: #be1616;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo .row i {
+  color: #b0b0bd;
+  margin-right: 8px;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .callerInfo span {
+  color: #b0b0bd;
+  font-size: 13px;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .dialContainer {
+  background: #eeeef3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 190px;
+  border-top: 1px solid #bbbbc2;
+  border-bottom: 1px solid #bbbbc2;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .dialContainer .dialRow {
+  width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .dialContainer .dialRow .number {
+  width: 100%;
+  max-width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-transition: background 700ms;
+  transition: background 700ms;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .dialContainer .dialRow .number.phone {
+  background: green;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .callPageContainer .dialContainer .dialRow .number.phone i {
+  color: #fff;
+  font-size: 14px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer {
+  background: #efeff4;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .heading i {
+  font-size: 14px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .user {
+  margin: 0;
+  color: #60a4fb;
+  font-weight: 500;
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer {
+  padding: 8px 0;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat.reversed {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat.reversed img {
+  margin: 0 0 0 8px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat.reversed .chatMessage .row.second {
+  position: relative;
+  border-radius: 12px 0 12px 12px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat.reversed .chatMessage .row.second::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #60a4fb;
+  border-bottom: 5px solid transparent;
+  border-radius: 1px;
+  top: -3px;
+  right: -4px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat .chatMessage span {
+  font-size: 12px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat .chatMessage .row {
+  width: 100%;
+  padding: 6px;
+  max-width: 130px;
+  background: #60a4fb;
+  border-radius: 0 12px 12px 12px;
+  margin: 6px 0;
+  position: relative;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat .chatMessage .row.first::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 10px solid #60a4fb;
+  border-bottom: 5px solid transparent;
+  border-radius: 1px;
+  top: -3px;
+  left: -6px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .chat .chatMessage .row p {
+  margin: 0;
+  font-size: 10px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .sendMessage {
+  width: 100%;
+  padding: 18px 10px;
+  background: #60a4fb;
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .sendMessage .typeMessage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .sendMessage .typeMessage i {
+  margin-right: 4px;
+}
+
+.main .phoneContainer .loginPageContainer .messagePageContainer .chatContainer .sendMessage .typeMessage p {
+  margin: 0;
+  font-size: 13px;
+}
+/*# sourceMappingURL=style.css.map */

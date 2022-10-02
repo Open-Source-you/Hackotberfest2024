@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: monospace;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+}
+
+.text h1{
+    text-align:center;
+    font-size: 60px;
+    color: #F0E7E5;
+    text-shadow: 2px 2px 4px rgba(255, 255 , 0.05);
+    margin-top: -345px;
+    position: absolute;
+}
+.calc-body{
+    background: radial-gradient(
+        rgba(255, 255, 255, 0.09),
+        rgba(255, 255, 255, 0.9)
+      );    height: 50vh;
+    width: 45vw;
+    height: 70vh;
+    border-radius: 20px;
+}
+.result{
+    position: absolute;
+
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 70vh;
+    width: 20vw;
+    background: radial-gradient(
+        rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.5)
+    );
+}
+.result h1{
+    font-size: 55px;
+    margin: 40px 0;
+    text-align: center;
+}
+h2{
+    font-size: 35px;
+    margin: 10px 30px;
+}
+.show{
+    margin-top: 85px;
+}
+.inp{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 60vw;
+    height: 70vh;
+    display: flex;
+}
+
+input{
+    font-weight: 880;
+    border-radius: 10px;
+    margin: 15px;
+    height: 40px;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid rgb(223, 217, 217);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.main{
+    margin-left: 45px;
+}
+button{
+    margin-top: 20px;
+    height: 45px;
+    width: 200px;
+    font-weight: 650;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(223, 217, 217);
+    outline: none;
+    font-size: 20px;
+}
+
+::placeholder{
+    font-weight: 850;
+}
+.bottom-text h1{
+    margin-left: -965px;
+    font-size: 60px;
+    color: #F0E7E5;
+    text-shadow: 2px 2px 4px rgba(255, 255 , 0.05);
+    margin-top: 255px;
+    position: absolute;
+}
