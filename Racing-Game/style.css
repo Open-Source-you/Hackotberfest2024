@@ -1,0 +1,319 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.finishLine {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 1;
+  top: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-transition: opacity 1600ms, top 1000ms;
+  transition: opacity 1600ms, top 1000ms;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.finishLine.hidden {
+  opacity: 0;
+  top: -1000px;
+}
+
+.finishLine .finishImg {
+  width: 100%;
+  max-width: 840px;
+  height: 620px;
+  background: url("img/finish-line.png") no-repeat center center;
+  background-size: cover;
+}
+
+.finishLine .winner {
+  text-align: center;
+}
+
+.finishLine .winner h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.finishLine .winner .playAgain {
+  margin: 10px 0 0 0;
+  background: #222;
+  color: #fff;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  font-size: 17px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.finishLine .winner .playAgain:hover {
+  background: #2a2a2a;
+}
+
+.player-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.player-container .square {
+  width: 100%;
+  max-width: 160px;
+  height: 80px;
+  background: #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.player-container .square.start, .player-container .square.finish {
+  background: #262626;
+}
+
+.player-container .square.backward img {
+  width: 64px;
+}
+
+.road-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 300px;
+  overflow: hidden;
+}
+
+.road-container .player {
+  width: 160px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: margin-left 1000ms;
+  transition: margin-left 1000ms;
+}
+
+.road-container .player img {
+  width: 100%;
+}
+
+.road-container .road-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.road-container .road-lines span {
+  width: 100%;
+  max-width: 80px;
+  border: 4px solid #2b2b2b;
+}
+
+.dice-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dice-container .firstPlayerRoll,
+.dice-container .secondPlayerRoll {
+  width: 100%;
+  max-width: 320px;
+  height: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dice-container .firstPlayerRoll .title,
+.dice-container .secondPlayerRoll .title {
+  color: #fff;
+  margin: 0;
+  font-size: 30px;
+  line-height: 1;
+  text-align: center;
+}
+
+.dice-container .firstPlayerRoll .dice-wrap,
+.dice-container .secondPlayerRoll .dice-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.dice-container .firstPlayerRoll .dice-wrap .dice,
+.dice-container .secondPlayerRoll .dice-wrap .dice {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+}
+
+.dice-container .firstPlayerRoll .dice-wrap .rollDiceOne,
+.dice-container .firstPlayerRoll .dice-wrap .rollDiceTwo,
+.dice-container .secondPlayerRoll .dice-wrap .rollDiceOne,
+.dice-container .secondPlayerRoll .dice-wrap .rollDiceTwo {
+  width: 100%;
+  max-width: 120px;
+  height: 120px;
+  background: url("img/diceRoll.png") no-repeat center center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.dice-container .firstPlayerRoll .dice-wrap .rollDiceOne.active,
+.dice-container .firstPlayerRoll .dice-wrap .rollDiceTwo.active,
+.dice-container .secondPlayerRoll .dice-wrap .rollDiceOne.active,
+.dice-container .secondPlayerRoll .dice-wrap .rollDiceTwo.active {
+  -webkit-animation: shake 2s infinite cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 2s infinite cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 20px, 0);
+            transform: translate3d(-1px, 20px, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, -20px);
+            transform: translate3d(2px, 0, -20px);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, -20px, 0);
+            transform: translate3d(-4px, -20px, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 20px, 0);
+            transform: translate3d(-1px, 20px, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, -20px);
+            transform: translate3d(2px, 0, -20px);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, -20px, 0);
+            transform: translate3d(-4px, -20px, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+}
+/*# sourceMappingURL=style.css.map */
