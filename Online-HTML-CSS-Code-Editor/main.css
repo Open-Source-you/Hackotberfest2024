@@ -220,3 +220,34 @@ body {
 	display: flex;
 	align-items: center;
 }
+
+.top{  
+  height: 60px;
+  position: relative;
+  bottom: 120px;
+  }
+
+  .btn{
+  position: relative;
+  top: 15px;
+  left: 658px;
+  width: 100px;
+  height: 50px;
+  border-radius: 15px;
+  background: #1200b8;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #ddd;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 2px;
+  font-size: 13px;
+  outline: none;
+  transition-duration: 300ms;
+  box-shadow: black;
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 3px 2px 5px 0px #272424;
+}
+  .btn:hover{
+    background: #000E1B;
+  }
