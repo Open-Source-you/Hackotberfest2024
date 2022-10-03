@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="con">
+           <div class="time">
+               <div class="timebox">
+                   <div class="hr">00 :</div>
+                   <div class="min">00 :</div>
+                   <div class="sec">00</div>  
+               </div>
+           </div>
+            
+            <div class="buttons">
+<div class="change"><i class="fa fa-play"></i></div>
+<div class="reset"><i class="fa fa-undo"></i></div>
+            </div>
+        </div>
+        
+        
+        <script>
+            var pla = document.querySelector(".fa-play");
+var reset = document.querySelector(".fa-undo");
+var hr = document.querySelector(".hr");
+var min = document.querySelector(".min");
+var sec = document.querySelector(".sec");
+pla.addEventListener('click',start);
+reset.addEventListener('click',reseter);
+var seconds = 0;
+var minutes = 0;
+var hour = 0;
+var interval;
+var status =1;
+var dishr , dismin , dissec
+function increase(){
+    seconds++ ;
+    if(seconds / 100 === 1){
+        minutes++
+        seconds = 0
+        if(minutes / 60 === 1){
+            hour++
+            minutes = 0
+        }
+    }
+    dissec = seconds ;
+    dismin = minutes ;
+    dissec = seconds ;
+   if(seconds < 10){
+        dissec = "0" + seconds;
+    }
+    if(minutes < 10){
+        dismin = "0" + minutes;
+    }
+    if(hour < 10){
+        dishr = "0" + hour;
+    }
+    sec.innerHTML = dissec ;
+    min.innerHTML = dismin + " " +":";
+    hr.innerHTML = dishr + " " + ":";
+}
+function start(){
+
+   if(status==1){
+    interval = setInterval(increase,10.5)
+    pla.className = "fa fa-stop";
+    status = 0;
+    }
+   else if(status==0){
+       clearInterval(interval);
+       status = 1;
+       pla.className = "fa fa-play";
+   }
+}
+function reseter(){
+     seconds = 0;
+     minutes = 0;
+     hour = 0;
+     hr.innerHTML = "00 :" ;
+     min.innerHTML = "00 :" ;
+     sec.innerHTML = "00" ;
+      
+      }
+ 
+        </script>
+    </body>
+</html>
