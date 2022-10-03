@@ -18,30 +18,34 @@ body{
 .text h1{
     text-align:center;
     font-size: 60px;
-    color: #F0E7E5;
+    color: #3434ce;
     text-shadow: 2px 2px 4px rgba(255, 255 , 0.05);
-    margin-top: -345px;
+    
+    margin: auto;
+    margin-top: -350px;
     position: absolute;
 }
 .calc-body{
+    display: flex;
     background: radial-gradient(
         rgba(255, 255, 255, 0.09),
         rgba(255, 255, 255, 0.9)
-      );    height: 50vh;
-    width: 45vw;
-    height: 70vh;
+      );    
+    width: fit-content;
+    height: fit-content;
     border-radius: 20px;
+    padding: 2%;
+    
 }
 .result{
-    position: absolute;
 
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
-    height: 70vh;
-    width: 20vw;
+    
     background: radial-gradient(
         rgba(0, 0, 0, 0.05), rgba(255, 255, 255, 0.5)
     );
+    
 }
 .result h1{
     font-size: 55px;
@@ -56,12 +60,12 @@ h2{
     margin-top: 85px;
 }
 .inp{
+    display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    width: 60vw;
-    height: 70vh;
-    display: flex;
+    
+    
 }
 
 input{
@@ -78,18 +82,28 @@ input{
 }
 
 .main{
-    margin-left: 45px;
+    margin: auto;
 }
-button{
-    margin-top: 20px;
-    height: 45px;
-    width: 200px;
+.btn{
+    height: auto;
+    width:auto;
+    padding: 1%;
     font-weight: 650;
     cursor: pointer;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgb(223, 217, 217);
+    background: linear-gradient(45deg,
+        #8a54ba,
+        #4d3380);
+    border: 1px solid rgb(61, 50, 50);
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px #5ba0a7;
     outline: none;
-    font-size: 20px;
+    font-size: 30px;
+    color: rgb(241, 250, 174);
+}
+
+.btn:hover{
+    background: linear-gradient(45deg,
+        #4d3380, #8a54ba);
 }
 
 ::placeholder{
@@ -117,7 +131,7 @@ input{
     border: 5px solid #244624;
     font-size:34px;
     height: 65px;
-    width: 456px;
+    width: 260px;
 }
 
 button{
@@ -142,4 +156,3 @@ h1{
     font-size: 28px;
     font-family: 'Courier New', Courier, monospace;
 }
-
