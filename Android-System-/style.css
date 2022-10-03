@@ -6,6 +6,16 @@
 
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: black;
+  margin:0;
+  padding:0;
+  display:grid;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .container {
