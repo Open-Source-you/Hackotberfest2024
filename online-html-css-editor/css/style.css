@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+.container{
+  padding: 0 100px 0 100px;
+}
+
+.main-info-section{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+}
+
+.text h1{
+  color: #fff;
+  font-size:3rem;
+  cursor: context-menu;
+  font-size: 56px;
+  
+}
+
+.text span{
+  display: inline-block;
+  white-space: 0;
+}
+
+
+span:hover {
+  color: #48cfad;
+  transition: all .1s
+}
