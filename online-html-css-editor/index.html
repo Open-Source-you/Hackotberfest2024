@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Codemania</title>
+
+    <meta
+      name="description"
+      content="This is an online code editor for html css and javascript. "
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="David Mungai" />
+    <meta
+      name="keywords"
+      content="Live code editor, online code editor, live html editor, live css editor, live javascript editor"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+   
+    <div class="header-wrap">
+      <div class="top">
+        <button class="btn" type="button">Login</button>
+      </div>
+      <div class=" main-info-section">
+        <div class="text">
+          <h1>
+            <span>C</span>
+            <span class="m-left">o</span>
+            <span class="m-left">d</span>
+            <span class="m-left">e</span>
+            <span class="m-left">m</span>
+            <span class="m-left">a</span>
+            <span class="m-left">n</span>
+            <span class="m-left">i</span>
+            <span class="m-left">a</span>
+          </h1>
+        </div>
+      </div>
+      <h3 class="drag">Live, Online Code Editor</h1>
+      <h4>Compile HTML, CSS and JavaScript on the web</h4>
+    </div>
+    <div id="ide-parent">
+      <div id="button-wrapper">
+        <button onclick="switchPanel(0)">HTML</button>
+        <button onclick="switchPanel(1)">CSS</button>
+        <button onclick="switchPanel(2)">js</button>
+        <button onclick="runEdit(3)">Result</button>
+      </div>
+      <div id="ide-container">
+        <div class="panel-wrapper">
+          <div id="html">
+            &lt;!--predefined html, but editable--&gt; &lt;div
+            class="circle"&gt; click me! &lt;/div&gt;
+          </div>
+        </div>
+        <div class="panel-wrapper">
+          <div id="css">
+            /*predefined CSS, but editable*/ .circle { display: flex;
+            align-items: center; justify-content: center; width: 200px; height:
+            200px; border-radius: 50%; background: crimson; margin: auto;
+            margin-top: 50px; transition-duration: 300ms; }
+          </div>
+        </div>
+        <div class="panel-wrapper">
+          <div id="js">
+            //predefined JavaScript, but editable var circle =
+            document.querySelector(".circle"); var bool = false;
+            circle.addEventListener('click', function() { if (!bool) {
+            circle.style.background = "coral"; bool = true; } else {
+            circle.style.background = "crimson"; bool = false; } });
+          </div>
+        </div>
+        <div class="panel-wrapper">
+          <iframe id="result"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="description"></div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script src="app.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+    <script src="js/TimelineLite.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/CSSPlugin.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
