@@ -180,8 +180,21 @@ let youLoose = () => {
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
 
 
+function show_all_cards(){
+    for(let i=0;i<cardsList.length;i++){
+        cardsList[i].classList.add('flip'); 
+    }
+}
+function hide_all_cards(){
+    for(let i=0;i<cardsList.length;i++){
+        cardsList[i].classList.remove('flip'); 
+    }
+}
+
 //Function to start the game
 function play(){
     document.getElementById('welcome-screen').style.display = 'none';
-    timer();
+    show_all_cards();
+    setTimeout(hide_all_cards,1000);
+    setTimeout(timer,1400);
 }
