@@ -64,7 +64,7 @@ Once you have cloned the `Hacktoberfest-2022` repository in Github, move to that
 
 ```sh
 # This will change directory to a folder Hacktoberfest-2022
-$ cd Hacktoberfest-2022
+$ cd Hackotberfest2022
 ```
 
 Move to this folder for all other commands.
