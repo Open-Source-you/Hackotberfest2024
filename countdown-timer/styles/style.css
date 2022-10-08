@@ -1,211 +1,273 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+html,
+            body {
+                padding: 0;
+                margin: 0;
+                background-color: #000;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+            
+            input,
+            label {
+                display: none;
+            }
 
-:root {
-  --blue: #0995fa;
-  --red: #f0310b;
-  --yellow: #f6e608;
-}
+            .container {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                font-weight: 300;
+                margin: 60px auto 0;
+                width: 90vw;
+                min-width: 300px;
+                max-width: 400px;
+                text-align: center;
+            }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+            /* timer */
+            time {
+                font-size: 68px;
+                height: 1em;
+                line-height: 1em;
+                display: inline-block;
+                overflow: hidden;
+                animation-name: none;
+                animation-play-state: paused;
+                margin-bottom: 60px;
+                color: #fff;
+            }
+                time i,
+                time b {
+                    float: left;
+                    font-style: normal;
+                    font-weight: 100;
+                    animation-name: inherit;
+                    animation-play-state: inherit;
+                }
 
-body {
-  height: 100vh;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #000;
-  font-family: "Space Grotesk", sans-serif;
-}
+                .container > time b {
+                    height: 1em;
+                    min-width: 0.3em;
+                    padding-top: 0.3em;
+                }
 
-/* CONTAINER */
-.container {
-  width: 768px;
-  margin: 0 auto;
-  /* outline: 1px solid white; */
-}
+                .container > time b::before,
+                .container > time b::after {
+                    content: '';
+                    display: block;
+                    width: 0.1em;
+                    height: 0.1em;
+                    background-color: currentColor;
+                    border-radius: 100%;
+                    margin: 0 auto 0.25em;
+                }
 
-/* BUTTONS */
-button {
-  font-family: inherit;
-  font-size: 1rem;
-}
+                time i::before,
+                time i::after {
+                    content:'0\A 1\A 2\A 3\A 4\A 5\A 6\A 7\A 8\A 9\A 0';
+                    white-space: pre;
+                    animation-name: inherit;
+                    animation-play-state: inherit;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: steps(10);
+                    float: left;
+                    margin: 0 0.02em;
+                }
 
-button:hover {
-  cursor: pointer;
-}
+                time i:first-child::before,
+                time i:nth-of-type(2)::before {
+                    content:'0\A 1\A 2\A 3\A 4\A 5\A 0';
+                    animation-timing-function: steps(6);
+                }
 
-.btn {
-  padding: 1rem;
-  background-color: transparent;
-  border-width: 2px;
-  border-style: solid;
-}
+                time i:first-child::before {
+                    animation-duration: 3600s;
+                }
 
-/* TIMER SECTION */
-.timer-section {
-  margin-bottom: 3rem;
-}
+                time i:first-child::after {
+                    animation-duration: 600s;
+                }
 
-/* TIMER */
-.timer-display {
-  font-size: 5rem;
-  text-align: center;
-}
+                time i:nth-of-type(2)::before {
+                    animation-duration: 60s;
+                }
 
-.timer-display .separator {
-  margin: 0 0.5rem;
-}
+                time i:nth-of-type(2)::after {
+                    animation-duration: 10s;
+                }
 
-.timer-display .time-unit {
-  font-size: 3rem;
-}
+                time i:nth-of-type(3)::before {
+                    animation-duration: 1s;
+                }
 
-/* TIMER CONTROLS */
-.timer-ctrls {
-  width: 50%;
-  margin: 0 auto 5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
+                time i:nth-of-type(3)::after {
+                    animation-duration: 100ms;
+                }
 
-.timer-ctrls .btn {
-  width: 4.3rem;
-  height: 4.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  transition: 0.15s all;
-}
+            .controls {
+                position: relative;
+                height: 80px;
+                margin-bottom: 20px;
+            }
+                .controls::before {
+                    display: none;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 80px;
+                    height: 80px;
+                    background-color: #000;
+                    opacity: 0.5;
+                    z-index: 10;
+                }
 
-.timer-ctrls .btn:active {
-  transform: scale(0.94);
-}
+            label {
+                cursor: pointer;
+                font-size: 16px;
+                border: 2px solid #353535;
+                background-color: #353535;
+                box-shadow: inset 0 0 0 2px #000;
+                color: #ccc;
+                width: 80px;
+                border-radius: 100%;
+                text-align: center;
+                line-height: 76px;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+                label[for="start"] {
+                    background-color: #182E1C;
+                    border-color: #182E1C;
+                    color: #42CC57;
+                }
 
-.timer-ctrls .timer-start {
-  color: var(--blue);
-  border-color: var(--blue);
-}
+                label[for="stop"] {
+                    background-color: #351614;
+                    border-color: #351614;
+                    color: #FF352C;
+                }
 
-.timer-ctrls .timer-start:hover {
-  color: #000;
-  background-color: var(--blue);
-}
+                label[for="start"],
+                label[for="stop"] {
+                    right: 0;
+                    left: auto;
+                }
 
-.timer-ctrls .timer-stop {
-  color: var(--red);
-  border-color: var(--red);
-}
+            .laps {
+                counter-reset: laps;
+                list-style: none;
+                margin: 0;
+                padding-left: 0;
+                border-top: 1px solid #333;
+                font-size: 16px;
+            }
+                .laps li {
+                    color: #666;
+                    text-align: right;
+                    position: relative;
+                    border-bottom: 1px solid #333;
+                    padding-top: 1em;
+                    height: 3em;
+                }
 
-.timer-ctrls .timer-stop:hover {
-  color: #fff;
-  background-color: var(--red);
-}
+                .laps li::before {
+                    counter-increment: laps;
+                    content: 'Lap ' counter(laps);
+                    visibility: hidden;
+                    color: inherit;
+                    line-height: 3em;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
 
-.timer-ctrls .timer-pause {
-  color: var(--yellow);
-  border-color: var(--yellow);
-}
+                .laps li time {
+                    visibility: hidden;
+                    color: inherit;
+                    font-size: inherit;
+                    margin-bottom: 0;
+                }
 
-.timer-ctrls .timer-pause:hover {
-  color: #000;
-  background-color: var(--yellow);
-}
+                .laps li time i,
+                .laps li time b {
+                    font-weight: inherit;
+                    padding-top: 0;
+                }
 
-.timer-ctrls .btn.disabled,
-.timer-ctrls .btn.disabled:hover,
-.timer-ctrls .btn.disabled:active {
-  border: 1px solid #555;
-  background-color: #222;
-  color: #555;
-  transform: none;
-}
+                .laps li time b::before {
+                    content: ':';
+                }
 
-/* TIMER VALUE INPUT */
-.timer-value-input {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+            /* Visible control conditions */
+            #start:checked ~ .controls label[for="stop"],
+            #start:checked ~ #lap_1:not(:checked) ~ .controls label[for="lap_1"],
+            #start:checked ~ #lap_1:checked + #lap_2:not(:checked) ~ .controls label[for="lap_2"],
+            #start:checked ~ #lap_2:checked + #lap_3:not(:checked) ~ .controls label[for="lap_3"],
+            #start:checked ~ #lap_3:checked + #lap_4:not(:checked) ~ .controls label[for="lap_4"],
+            #start:checked ~ #lap_4:checked ~ .controls label[for="lap_4"],
+            #stop:checked ~ .controls label[for="start"],
+            #stop:checked ~ .controls label[for="reset"],
+            #init:checked ~ .controls label[for="start"],
+            #init:checked ~ .controls label[for="lap_1"] {
+                display: block;
+            }
 
-.timer-value-input > div:not(:last-child) {
-  margin-right: 2rem;
-}
+            /* Disable lap control conditions */
+            #init:checked ~ .controls::before,
+            #start:checked ~ #lap_4:checked ~ .controls::before {
+                display: block;
+            }
 
-.timer-value-input input[type="range"] {
-  display: block;
-}
+            /* Visible lap conditions */
+            .laps li:first-child time,
+            .laps li:first-child::before,
+            #lap_1:checked ~ .laps li:nth-child(2) time,
+            #lap_1:checked ~ .laps li:nth-child(2)::before,
+            #lap_2:checked ~ .laps li:nth-child(3) time,
+            #lap_2:checked ~ .laps li:nth-child(3)::before,
+            #lap_3:checked ~ .laps li:nth-child(4) time,
+            #lap_3:checked ~ .laps li:nth-child(4)::before {
+                visibility: visible;
+            } 
 
-/* MEDIA QUERIES */
-@media (max-width: 768px) {
-  .container {
-    max-width: 95%;
-  }
+            /* Reset */
+            #init:checked ~ time,
+            #init:checked ~ .laps li time {
+                animation-name: none;
+            }
 
-  /* TIMER CONTROLS */
-  .timer-ctrls {
-    width: 70%;
-  }
-}
+            #init:not(:checked) ~ time,
+            #init:not(:checked) ~ .laps li time {
+                animation-name: digit;
+            }
 
-@media (max-width: 650px) {
-  /* TIMER DISPLAY */
-  .timer-display {
-    font-size: 3rem;
-  }
+            /* Timer / Lap running conditions */
+            #start:checked ~ time,
+            #start:checked ~ #lap_1:not(:checked) ~ .laps li:first-child time,
+            #start:checked ~ :checked + #lap_2:not(:checked) ~ .laps li:nth-child(2) time,
+            #start:checked ~ :checked + #lap_3:not(:checked) ~ .laps li:nth-child(3) time,
+            #start:checked ~ :checked + #lap_4:not(:checked) ~ .laps li:nth-child(4) time {
+                animation-play-state: running;
+            }
 
-  .timer-display .separator {
-    margin: 0 2px;
-  }
+            /* Timer / Lap stopping conditions */
+            #stop:checked ~ time,
+            #stop:checked ~ .laps li time,
+            #start:checked ~ #lap_1:checked ~ .laps li:first-child time,
+            #start:checked ~ #lap_2:checked ~ .laps li:nth-child(2) time,
+            #start:checked ~ #lap_3:checked ~ .laps li:nth-child(3) time,
+            #start:checked ~ #lap_4:checked ~ .laps li:nth-child(4) time {
+                color: #fff;
+                animation-play-state: paused;
+            }
 
-  .timer-display .time-unit {
-    font-size: 2rem;
-  }
-
-  /* TIMER CONTROLS */
-  .timer-ctrls .btn {
-    width: 3.5rem;
-    height: 3.5rem;
-  }
-
-  /* TIMER VALUE INPUT */
-  .timer-value-input {
-    width: 90%;
-    margin: 0 auto;
-    flex-direction: column;
-  }
-
-  .timer-value-input > div:not(:last-child) {
-    margin-right: 0;
-    margin-bottom: 2rem;
-  }
-
-  .timer-value-input > div {
-    width: 100%;
-  }
-
-  .timer-value-input input[type="range"] {
-    display: block;
-    width: 100%;
-  }
-}
-
-@media (max-width: 375px) {
-  /* TIMER DISPLAY */
-  .timer-display {
-    font-size: 3.5rem;
-  }
-
-  /* TIMER CONTROLS */
-  .timer-ctrls {
-    width: 90%;
-  }
-}
+            @keyframes digit {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(calc(-100% + 1em));
+                }
+            }
