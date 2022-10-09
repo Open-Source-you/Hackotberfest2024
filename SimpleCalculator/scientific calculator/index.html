@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style>
+	 *{
+	 	font-weight: bold;
+	 }
+	 body{
+	 	background-color: #030535;
+	 }
+        
+        table{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border: 10px #E6E2EC inset ;
+            border-radius: 20px;
+            width: auto;
+            padding: 0;
+            background-color: #695C78;
+            height: 300px;
+            text-decoration: none;
+        }
+
+        
+        td{
+            text-align: center;
+        }
+
+        
+        input[type=text]{
+            background-color: #D3E3E3;
+            text-align: right;
+            font-size: 20px;
+            color: black;
+            width: 100%;
+            height: 80px;
+            border: 10px;
+            border-radius: 10px;
+        }
+
+       
+        button{
+            text-align: center;
+            border: 10px;
+            background-color: #F2F2F4;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            outline: 0 !important;
+            cursor: pointer ;
+        }
+
+       
+        button:hover{
+            background-color: #FFE793 !important;
+        }
+
+        
+
+        button:active,.scientific:active, #on:active{
+        box-shadow: 0 2px 8px 0 white, 0 2px 10px 0 white;
+        border: none;
+        text-decoration: none;
+        }
+
+
+       	.scientific{
+            text-align: center;
+            border: 10px;
+            background-color: #2E2D33;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            color: white;
+            outline: 0 !important;
+        }
+
+        .scientific:hover{
+            background-color: #E3E3E5 !important;
+            color: black !important;
+        }
+
+        #equal{
+        	background-color: #1fbd51;
+        }
+
+        #on{
+            text-align: center;
+            border: 10px;
+            background-color: #F2F2F4;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            outline: 0 !important;
+            cursor: pointer ;
+        }
+        #ce,#on{
+            background-color: #FEB89A;
+        }
+
+        
+        #ce:hover,#on:hover{
+            background-color: #FF6363 !important;
+        }
+
+       
+        .ce{
+            background-color: #9EFFA7 !important;
+        }
+
+        ul li{
+        	display: inline-block;
+
+        }
+
+        .solar{
+        	background-color:#4F332F; 
+        	height: 30px;
+        	width: 30px;
+        	border-right: 2px solid black;
+
+        }
+
+        .operations{
+        	background-color: #b3c6ff;
+        }
+</style>
+<script type="text/javascript">
+    var fval = "";
+    var sval = "";
+    var operatorPressed = "";
+    var state = false;
+  
+      
+    function  power() {
+            if (on.value == "OFF"){
+                on.value = "ON";
+                screenvalue.value = "OFF";
+                state = false;
+                fval = 0;
+                sval = 0;
+                sin.value = "sin";
+                    cos.value = "cos";
+                    tan.value = "tan";
+            }
+            else{
+                on.value = "OFF";
+                screenvalue.value = "0";
+                state = true;
+
+            }
+        }
+
+    function button(x) {
+            if(state){
+                if( screenvalue.value == "0"){
+                    screenvalue.value = x;
+                }
+                else{
+                    screenvalue.value += x;
+                }
+            }
+        }
+
+        function operator(y) {
+            if (state){
+                fval = screenvalue.value;
+                screenvalue.value ="";
+                operatorPressed = y;
+            }
+
+        }
+
+        function equals(){
+            sval =screenvalue.value;
+            if(parseFloat(fval) + parseFloat(sval) == NaN){
+                screen.value = "Invalid Input"
+            }
+            else{
+                if(operatorPressed == "plus"){
+                screenvalue.value = parseFloat(fval) + parseFloat(sval);
+            }
+
+            else if(operatorPressed == "minus"){
+                screenvalue.value = parseFloat(fval) - parseFloat(sval);
+            }
+
+            else if(operatorPressed == "div"){
+                screenvalue.value = parseFloat(fval) / parseFloat(sval);
+            }
+
+            else if(operatorPressed == "mult"){
+                screenvalue.value = parseFloat(fval) * parseFloat(sval);
+            }
+            }
+            
+
+
+        }
+
+        function del(){
+            if(state){
+                if(screenvalue.value.length == 1){
+                    screenvalue.value =  screenvalue.value.slice(0,-1);
+                    screenvalue.value = 0;
+                }
+                else{
+                    screenvalue.value =  screenvalue.value.slice(0,-1);
+            }
+        }
+           
+        }
+
+        function scientific(operation){
+            if(state){
+                if(operation == "sqrt"){
+                screenvalue.value =Math.sqrt(screenvalue.value);
+            }
+
+            else if(operation == "pi"){
+               screenvalue.value =Math.PI; 
+            }
+
+            else if(operation == "in"){
+                screenvalue.value =Math.log(screenvalue.value);
+            }
+
+            else if(operation == "sin"){
+                screenvalue.value =Math.sin(screenvalue.value);
+            }
+
+            else if(operation == "cos"){
+                screenvalue.value =Math.cos(screenvalue.value);
+            }
+
+            else if(operation == "tan"){
+                screenvalue.value =Math.tan(screenvalue.value);
+            }
+
+            else if(operation == "log"){
+                screenvalue.value =Math.log10(screenvalue.value);
+            }
+
+            else if(operation == "sqr"){
+                screenvalue.value =Math.pow(screenvalue.value,2);
+            }
+            else if(operation == "exp"){
+                screenvalue.value =Math.exp(screenvalue.value);
+            } 
+
+            else if(operation == "sinh"){
+                screenvalue.value =Math.sinh(screenvalue.value);
+            }
+
+            else if(operation == "cosh"){
+                screenvalue.value =Math.cosh(screenvalue.value);
+            }
+
+            else if(operation == "tanh"){
+                screenvalue.value =Math.tanh(screenvalue.value);
+            }
+        }
+    }
+
+        function dot(){
+            if(state){
+                if(screenvalue.value.indexOf(".") == -1){
+                    screenvalue.value += "."
+                }
+            }
+        }
+
+        function hyp(){
+            if(state){
+                if( sin.value == "sin"){
+                    sin.value = "sinh";
+                    cos.value = "cosh";
+                    tan.value = "tanh";
+                }
+                else if(sin.value == "sinh"){
+                    sin.value = "sin";
+                    cos.value = "cos";
+                    tan.value = "tan";
+                }
+                }
+            }
+        
+</script>
+</head>
+<body>
+<center>
+	<table cellspacing="10px" cellpadding="0px" align="center">
+		<tr>
+			<td colspan="5">
+				<div style="float: right;">
+					
+					<ul>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+					</ul>
+			
+					
+				</div></td>
+		</tr>
+		<tr>
+			<td colspan="5"><input type="text" name="" value="OFF" disabled id="screenvalue"></td>
+		</tr>
+		<tr>
+			<td><input type ="button" value="in"  class="scientific" onclick="scientific('in')"></td>
+            <td><input type ="button" value="sin" id="sin" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="cos" id="cos" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="tan" id="tan" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="log" class="scientific" onclick="scientific('log')"></td>
+		</tr>
+
+		<tr>
+			<td><button class="scientific" onclick="scientific('sqrt')">&radic;</button></td>
+			<td><button class="scientific" onclick="scientific('sqr')">x&sup2;</button></td>
+			<td><button class="scientific" onclick="scientific('pi')">&pi;</button></td>
+			<td><button class="scientific" onclick="scientific('exp')">exp</button></td>
+			<td><button class="scientific" onclick="hyp()">hyp</button></td>
+		</tr>
+
+		<tr>
+			<td><button onclick="button(7)">7</button></td>
+			<td><button onclick="button(8)">8</button></td>
+			<td><button onclick="button(9)">9</button></td>
+			<td><button id="ce" onclick="del()">DEL</button></td>
+			<td><input type="button" id="on" onclick="power()" value="ON"></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(4)">4</button></td>
+			<td><button onclick="button(5)">5</button></td>
+			<td><button onclick="button(6)">6</button></td>
+			<td><button class="operations" onclick="operator('mult')">X</button></td>
+			<td><button class="operations" onclick="operator('div')">/</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(1)">1</button></td>
+			<td><button onclick="button(2)">2</button></td>
+			<td><button onclick="button(3)">3</button></td>
+			<td><button class="operations" onclick="operator('plus')">+</button></td>
+			<td><button class="operations" onclick="operator('minus')">&minus;</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(0)">0</button></td>
+			<td><button onclick="dot()">.</button></td>
+			<td colspan="3"><button style="width: 100%;" id="equal" onclick="equals()">=</button></td>
+			
+		</tr>
+	</table>
+
+</center>
+</body>
+</html>
