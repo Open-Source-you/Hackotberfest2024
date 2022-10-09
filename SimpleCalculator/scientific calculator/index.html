@@ -1,12 +1,297 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Scientific Calculator</title>
-    <link rel="stylesheet" href="style.css">
+	<title></title>
+
+<style>
+	 *{
+	 	font-weight: bold;
+	 }
+	 body{
+	 	background-color: #030535;
+	 }
+        
+        table{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            border: 10px #E6E2EC inset ;
+            border-radius: 20px;
+            width: auto;
+            padding: 0;
+            background-color: #695C78;
+            height: 300px;
+            text-decoration: none;
+        }
+
+        
+        td{
+            text-align: center;
+        }
+
+        
+        input[type=text]{
+            background-color: #D3E3E3;
+            text-align: right;
+            font-size: 20px;
+            color: black;
+            width: 100%;
+            height: 80px;
+            border: 10px;
+            border-radius: 10px;
+        }
+
+       
+        button{
+            text-align: center;
+            border: 10px;
+            background-color: #F2F2F4;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            outline: 0 !important;
+            cursor: pointer ;
+        }
+
+       
+        button:hover{
+            background-color: #FFE793 !important;
+        }
+
+        
+
+        button:active,.scientific:active, #on:active{
+        box-shadow: 0 2px 8px 0 white, 0 2px 10px 0 white;
+        border: none;
+        text-decoration: none;
+        }
+
+
+       	.scientific{
+            text-align: center;
+            border: 10px;
+            background-color: #2E2D33;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            color: white;
+            outline: 0 !important;
+        }
+
+        .scientific:hover{
+            background-color: #E3E3E5 !important;
+            color: black !important;
+        }
+
+        #equal{
+        	background-color: #1fbd51;
+        }
+
+        #on{
+            text-align: center;
+            border: 10px;
+            background-color: #F2F2F4;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            outline: 0 !important;
+            cursor: pointer ;
+        }
+        #ce,#on{
+            background-color: #FEB89A;
+        }
+
+        
+        #ce:hover,#on:hover{
+            background-color: #FF6363 !important;
+        }
+
+       
+        .ce{
+            background-color: #9EFFA7 !important;
+        }
+
+        ul li{
+        	display: inline-block;
+
+        }
+
+        .solar{
+        	background-color:#4F332F; 
+        	height: 30px;
+        	width: 30px;
+        	border-right: 2px solid black;
+
+        }
+
+        .operations{
+        	background-color: #b3c6ff;
+        }
+</style>
+<script type="text/javascript">
+    var fval = "";
+    var sval = "";
+    var operatorPressed = "";
+    var state = false;
+  
+      
+    function  power() {
+            if (on.value == "OFF"){
+                on.value = "ON";
+                screenvalue.value = "OFF";
+                state = false;
+                fval = 0;
+                sval = 0;
+                sin.value = "sin";
+                    cos.value = "cos";
+                    tan.value = "tan";
+            }
+            else{
+                on.value = "OFF";
+                screenvalue.value = "0";
+                state = true;
+
+            }
+        }
+
+    function button(x) {
+            if(state){
+                if( screenvalue.value == "0"){
+                    screenvalue.value = x;
+                }
+                else{
+                    screenvalue.value += x;
+                }
+            }
+        }
+
+        function operator(y) {
+            if (state){
+                fval = screenvalue.value;
+                screenvalue.value ="";
+                operatorPressed = y;
+            }
+
+        }
+
+        function equals(){
+            sval =screenvalue.value;
+            if(parseFloat(fval) + parseFloat(sval) == NaN){
+                screen.value = "Invalid Input"
+            }
+            else{
+                if(operatorPressed == "plus"){
+                screenvalue.value = parseFloat(fval) + parseFloat(sval);
+            }
+
+            else if(operatorPressed == "minus"){
+                screenvalue.value = parseFloat(fval) - parseFloat(sval);
+            }
+
+            else if(operatorPressed == "div"){
+                screenvalue.value = parseFloat(fval) / parseFloat(sval);
+            }
+
+            else if(operatorPressed == "mult"){
+                screenvalue.value = parseFloat(fval) * parseFloat(sval);
+            }
+            }
+            
+
+
+        }
+
+        function del(){
+            if(state){
+                if(screenvalue.value.length == 1){
+                    screenvalue.value =  screenvalue.value.slice(0,-1);
+                    screenvalue.value = 0;
+                }
+                else{
+                    screenvalue.value =  screenvalue.value.slice(0,-1);
+            }
+        }
+           
+        }
+
+        function scientific(operation){
+            if(state){
+                if(operation == "sqrt"){
+                screenvalue.value =Math.sqrt(screenvalue.value);
+            }
+
+            else if(operation == "pi"){
+               screenvalue.value =Math.PI; 
+            }
+
+            else if(operation == "in"){
+                screenvalue.value =Math.log(screenvalue.value);
+            }
+
+            else if(operation == "sin"){
+                screenvalue.value =Math.sin(screenvalue.value);
+            }
+
+            else if(operation == "cos"){
+                screenvalue.value =Math.cos(screenvalue.value);
+            }
+
+            else if(operation == "tan"){
+                screenvalue.value =Math.tan(screenvalue.value);
+            }
+
+            else if(operation == "log"){
+                screenvalue.value =Math.log10(screenvalue.value);
+            }
+
+            else if(operation == "sqr"){
+                screenvalue.value =Math.pow(screenvalue.value,2);
+            }
+            else if(operation == "exp"){
+                screenvalue.value =Math.exp(screenvalue.value);
+            } 
+
+            else if(operation == "sinh"){
+                screenvalue.value =Math.sinh(screenvalue.value);
+            }
+
+            else if(operation == "cosh"){
+                screenvalue.value =Math.cosh(screenvalue.value);
+            }
+
+            else if(operation == "tanh"){
+                screenvalue.value =Math.tanh(screenvalue.value);
+            }
+        }
+    }
+
+        function dot(){
+            if(state){
+                if(screenvalue.value.indexOf(".") == -1){
+                    screenvalue.value += "."
+                }
+            }
+        }
+
+        function hyp(){
+            if(state){
+                if( sin.value == "sin"){
+                    sin.value = "sinh";
+                    cos.value = "cosh";
+                    tan.value = "tanh";
+                }
+                else if(sin.value == "sinh"){
+                    sin.value = "sin";
+                    cos.value = "cos";
+                    tan.value = "tan";
+                }
+                }
+            }
+        
+</script>
 </head>
 <body>
-<!-- <center> -->
-	<table cellspacing="10px" cellpadding="0px" >
+<center>
+	<table cellspacing="10px" cellpadding="0px" align="center">
 		<tr>
 			<td colspan="5">
 				<div style="float: right;">
@@ -69,6 +354,6 @@
 		</tr>
 	</table>
 
-<!-- </center> -->
+</center>
 </body>
 </html>
