@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- <center> -->
+	<table cellspacing="10px" cellpadding="0px" >
+		<tr>
+			<td colspan="5">
+				<div style="float: right;">
+					
+					<ul>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+						<li><div class="solar"></div></li>
+					</ul>
+			
+					
+				</div></td>
+		</tr>
+		<tr>
+			<td colspan="5"><input type="text" name="" value="OFF" disabled id="screenvalue"></td>
+		</tr>
+		<tr>
+			<td><input type ="button" value="in"  class="scientific" onclick="scientific('in')"></td>
+            <td><input type ="button" value="sin" id="sin" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="cos" id="cos" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="tan" id="tan" class="scientific" onclick="scientific(this.value)"></td>
+            <td><input type ="button" value="log" class="scientific" onclick="scientific('log')"></td>
+		</tr>
+
+		<tr>
+			<td><button class="scientific" onclick="scientific('sqrt')">&radic;</button></td>
+			<td><button class="scientific" onclick="scientific('sqr')">x&sup2;</button></td>
+			<td><button class="scientific" onclick="scientific('pi')">&pi;</button></td>
+			<td><button class="scientific" onclick="scientific('exp')">exp</button></td>
+			<td><button class="scientific" onclick="hyp()">hyp</button></td>
+		</tr>
+
+		<tr>
+			<td><button onclick="button(7)">7</button></td>
+			<td><button onclick="button(8)">8</button></td>
+			<td><button onclick="button(9)">9</button></td>
+			<td><button id="ce" onclick="del()">DEL</button></td>
+			<td><input type="button" id="on" onclick="power()" value="ON"></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(4)">4</button></td>
+			<td><button onclick="button(5)">5</button></td>
+			<td><button onclick="button(6)">6</button></td>
+			<td><button class="operations" onclick="operator('mult')">X</button></td>
+			<td><button class="operations" onclick="operator('div')">/</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(1)">1</button></td>
+			<td><button onclick="button(2)">2</button></td>
+			<td><button onclick="button(3)">3</button></td>
+			<td><button class="operations" onclick="operator('plus')">+</button></td>
+			<td><button class="operations" onclick="operator('minus')">&minus;</button></td>
+		</tr>
+		<tr>
+			<td><button onclick="button(0)">0</button></td>
+			<td><button onclick="dot()">.</button></td>
+			<td colspan="3"><button style="width: 100%;" id="equal" onclick="equals()">=</button></td>
+			
+		</tr>
+	</table>
+
+<!-- </center> -->
+</body>
+</html>
