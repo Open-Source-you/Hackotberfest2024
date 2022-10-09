@@ -1,3 +1,4 @@
+function play(val){
 const cardArray = [
     {
         name: 'burger',
@@ -39,21 +40,40 @@ const cardArray = [
         name: 'watermelon',
         img: 'images/watermelon.png'
     },
+    {
+        name: 'roll',
+        img: 'images/roll.png'
+    },
+    {
+        name: 'birthdaycake',
+        img: 'images/birthdaycake.png'
+    },
+    {
+        name: 'cupcake',
+        img: 'images/cupcake.png'
+    },
+    {
+        name: 'dessert',
+        img: 'images/dessert.png'
+    },
 ];
 
-
+const arrsize = val;
+console.log(arrsize);
 let cardSpawner = () => {
     let index = 0;
-    const numberOfCards = 20;
+    const numberOfCards = 2*arrsize;
+    if(numberOfCards==12) document.getElementById('grid').style.width='400px';
+    if(numberOfCards==28) document.getElementById('grid').style.width='800px';
     for(let i=0;i<numberOfCards;i++){
-        const max = 9;
+        const max = arrsize-1;
         let card = document.createElement('div');
         card.className = 'card-wrapper';
         card.setAttribute('data-name',cardArray[index].name);
         card.innerHTML = `<div class="card-front"><img src="${cardArray[index].img}"></div><div class="card-back"></div>`;
         document.getElementById('grid').appendChild(card);
         index++;
-        if(index>9){index=0};
+        if(index>arrsize-1){index=0};
     }
 }
 
@@ -192,9 +212,8 @@ function hide_all_cards(){
 }
 
 //Function to start the game
-function play(){
     document.getElementById('welcome-screen').style.display = 'none';
     show_all_cards();
     setTimeout(hide_all_cards,1000);
-    setTimeout(timer,1400);
+    setTimeout(timer,1300);
 }
