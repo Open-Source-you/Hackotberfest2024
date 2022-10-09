@@ -1,0 +1,85 @@
+body{
+    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color:rgb(0, 8, 255);
+}
+
+.main{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    color:rgb(0, 0, 0);
+    margin: 0;
+    font-family: cursive;
+    text-shadow: 3px 3px red;
+}
+
+.cont{
+    display: inline-block;
+    margin: 0px 50px;
+    text-align: center;
+}
+
+button{
+    width: 30%;
+    background-color: green;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px;
+    margin-left: 37%;
+    border-radius: 10px;
+    cursor: pointer;
+    
+}
+
+button:hover{
+    background-color: limegreen;
+}
+
+#fb:hover{
+    color: blue;
+}
+
+#linkedin:hover{
+    color: darkblue
+}
+#github:hover{
+    color: rgb(130, 130, 130);    
+}
+
+#insta:hover{
+    color: rgb(241, 43, 76);
+}
+
+#tweet:hover{
+    color:#1DA1F2;
+}
+
+#mail:hover{
+    color: #BB001B;
+}
+
+a{
+    color:black;
+}
+
+img{
+    width:350px; 
+    height: auto;  
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
