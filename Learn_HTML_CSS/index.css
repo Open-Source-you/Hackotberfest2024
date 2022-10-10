@@ -1,0 +1,308 @@
+body {
+    box-sizing: border-box;
+    cursor: default;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', sans-serif;
+    line-height: 1.4;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    overflow-y: scroll;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background: #442266;
+    color: #eee;
+  }
+  
+  a {
+    color: #eee;
+  }
+  
+  a:hover {
+    text-decoration: none;  
+  }
+  
+  pre {
+    background: RebeccaPurple;
+    padding: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    -moz-box-shadow: inset 0 0 30px #442266;
+    -webkit-box-shadow: inset 0 0 30px #442266;
+    box-shadow: inset 0 0 30px #442266;
+  }
+  
+  code {
+    font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-size: .8rem;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Lato', 'Open Sans', 'Helvetica Neue', Helvetica, 'Lucida Grande', sans-serif;
+    margin: 2rem 0 1.6rem;
+    color: #DAA520;
+  }
+  
+  h1 {
+    border-bottom: .1rem solid rgba(255, 255, 255, 0.5);
+    font-size: 3.0rem;
+    font-style: normal;
+    font-weight: 500;
+  
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  h3 {
+    font-size: 2.1rem;
+    font-style: normal;
+    font-weight: 500;
+    margin: 1.6rem 0 0.4rem;
+  }
+  
+  h4 {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 600;
+    margin: 1.6rem 0 0.4rem;
+  }
+  
+  h5 {
+    font-size: 1.2rem;
+    font-style: normal;
+    font-weight: 600;
+    margin: 1.6rem 0 0.4rem;
+  }
+  
+  h6 {
+    color: #777;
+    font-size: 1.1rem;
+    font-style: normal;
+    font-weight: 600;
+    margin: 1.6rem 0 0.4rem;
+  }
+  
+  blockquote {
+    border-left: .2rem solid #1271db;
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    margin: 1.6rem 0;
+    padding-left: 1.6rem;
+  }
+  
+  button,
+  input[type="submit"] {
+    background: #442266;
+    background-image: -webkit-linear-gradient(top, #442266, rebeccapurple);
+    background-image: -moz-linear-gradient(top, #442266, rebeccapurple);
+    background-image: -ms-linear-gradient(top, #442266, rebeccapurple);
+    background-image: -o-linear-gradient(top, #442266, rebeccapurple);
+    background-image: linear-gradient(to bottom, #442266, rebeccapurple);
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    font-family: Arial;
+    color: #DAA520;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    border: solid #daa520 1px;
+    text-decoration: none;
+  }
+  
+  button:hover,
+  input[type="submit"]:hover {
+    background: rebeccapurple;
+    text-decoration: none;
+  }
+  
+  input,
+  textarea, select {
+    border: 1px solid #442266;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 4px;
+  }
+  
+  textarea {
+    display: block;
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+    vertical-align: middle;
+  }
+  
+  input:focus,
+  textarea:focus {
+    outline: none !important;
+    border: 1px solid #221133;
+    box-shadow: inset 0 0 10px #442266;
+    background-color: #D1B2D1;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    padding: 3px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    border: 1px solid #eee;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #eee;
+    box-shadow: 0 0 10px #000;
+    margin: 10px;
+  }
+  
+  caption {
+    text-align: left;
+    font-weight: bold; 
+    padding: 0 0 10px;
+    font-size: 120%;
+  }
+  
+  
+  thead th {
+    background: #efefef;
+    color: #444;
+  }
+  
+  tr {
+    background: #fff;
+    margin-bottom: 0.8rem;
+  }
+  
+  th,
+  td {
+    border: .1rem solid #ccc;
+    padding: 0.8rem 1.6rem;
+    text-align: center;
+    vertical-align: inherit;
+    color: #000;
+  }
+  
+  tfoot tr {
+    background: none;
+  }
+  
+  tfoot td {
+    color: #efefef;
+    font-size: 0.8rem;
+    font-style: italic;
+    padding: 1.6rem 0.4rem;
+  }
+  
+  /* 
+  thanks css tricks 
+  https://css-tricks.com/snippets/css/triangular-list-bullets/
+  minor tweak to remove the triangles from a <ol>
+  */
+  
+  ul {
+      margin: 0.75em 0;
+      padding: 1 1em;
+      list-style: none;
+  }
+  ul li:before { 
+      content: "";
+      border-color: transparent #daa520;
+      border-style: solid;
+      border-width: 0.35em 0 0.35em 0.45em;
+      display: block;
+      height: 0;
+      width: 0;
+      left: -1em;
+      top: 0.9em;
+      position: relative;
+  }
+  /* this was interfereing with the override for the a style, investigation required 
+  
+  li {
+    background: -webkit-linear-gradient(#daa520, #eee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  */
+  li a {
+    text-decoration: underline;
+  }
+  
+  /* pseudo classes */
+  
+  ::selection {
+    background-color: #b3d4fc;
+    color: #000;
+    text-shadow: none;
+  }
+  
+  /* specific classes */
+  
+  .container {
+    background: rebeccapurple;
+    padding: 10px;
+  }
+  
+  .inner-shadow {
+    -moz-box-shadow: inset 0 0 30px #442266;
+    -webkit-box-shadow: inset 0 0 30px #442266;
+    box-shadow: inset 0 0 30px #442266;
+  }
+  
+  #tooltip-for-dob{
+    border-style: solid;
+    border-width: 1px; 
+    border-color: black; 
+    background-color: #F9F8E6;
+    color: #6B5D50;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+  }
+  
+  .tooltip-for-dob-show {
+    visibility: visible;
+  }
+  
+  .tooltip-for-dob-hide {
+    visibility: hidden;
+  }
+  
+  main {
+    max-width: 50%;
+    padding-right: 100px;
+    padding-left: 100px;
+    margin-right: auto;
+    margin-left: auto;      
+  }
+  
+  aside {
+     width: 20%;
+     float: left;
+  }
+  
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    overflow: auto;
+  }
+  .low-lineheight {
+    padding-top: 0;
+    line-height: .8em;
+    font-size: .8rem;
+  }
+  .low-lineheight  > li {
+    margin-top: 2px;
+  }

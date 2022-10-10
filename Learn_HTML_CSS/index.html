@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+<aside class="inner-shadow container sticky">
+    <ul class="low-lineheight">
+      <li><a href="#headings">Headings</a></li>
+      <li><a href="#Lists">Lists</a></li>
+      <li><a href="#Links">Links</a></li>
+      <li><a href="#non-standard links">non-standard links</a></li>
+      <li><a href="#Tables">Tables</a></li>
+      <li><a href="#Table with a caption">Table with a caption</a></li>
+      <li><a href="#Complex data tables">Complex data tables</a></li>
+      <li><a href="#Complex data tables with multiple rows of headers">Complex data tables/rows</a></li>
+      <li><a href="#Layout table">Layout table</a></li>
+      <li><a href="#Required fields">Required fields</a></li>
+    <li><a href="#Textarea">Textarea</a></li>
+       <li><a href="#Radio buttons">Radio buttons</a></li>
+       <li><a href="#Blockquote">Blockquote</a></li>
+      <li><a href="#Date Fields">Date Fields</a></li>
+       <li><a href="#Tooltip">Tooltip</a></li>
+       <li><a href="#A collection of handly links">A collection of handly links</a></li>
+  
+      
+      
+    </ul>
+  </aside>
+  
+  <main>
+    <h1>We like purple, Codepen Styles</h1>
+    
+    <h2 id="headings">Headings</h2>
+    <div class="container inner-shadow">
+      <p>Headings should be used in order, starting with h1. If anything looks like a heading, it should be marked up as a heading. Note: Correct use of headings are important for screen-reader use. Screen-readers come with shortcut keys to navigate via headings
+        and is commonly used by sighted users. </p>
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      <h3>Heading 3</h3>
+      <h4>Heading 4</h4>
+      <h5>Heading 5</h5>
+      <h6>Heading 6</h6>
+    </div>
+  
+    <h2 id="Lists">Lists</h2>
+    <div class="container inner-shadow">
+      <p>
+        If anything on the page visually looks like a list, it should be marked up as a list. The bullet points or numbers can switched off using CSS.
+      </p>
+      <ul class="menu">
+        <li>Action 1 - no link</li>
+        <li><a href="#">Action 2</a></li>
+        <li><a href="#">Action 3</a></li>
+      </ul>
+    </div>
+  
+    <h2 id="Links">Links</h2>
+    <div class="container inner-shadow">
+      <p>
+        A standard anchor tag, also known as a link, is completely accessible if it has an href and text.
+      </p>
+      <a href="h#">A link</a>
+    </div>
+  
+    <h2 id="non-standard links">non-standard links</h2>
+    <div class="container inner-shadow">
+      <p>If the link does not link anywhere but rather fires a click event, then set href to javascript:void(0) otherwise it will not receive keyboard focus and CSS styles associated with <a> tags are not applied.
+  Compare these two links. The second one can only be activated with a mouse. 
+    </p>
+  <a href="javascript:void(0)" onclick="alert('Standard link action')">Standard link</a>
+        <a onclick="alert('Non-standard link action')">Non-standard link</a>
+    </div>
+  
+    <h2 id="Tables">Tables</h2>
+    <div class="container inner-shadow">
+      <p>
+        Tables should only be used for marking up tablular data. Use the
+        <th> tag to identify column headings.
+      </p>
+      <table>
+        <tr>
+          <th>Freight container designation</th>
+          <th>External length (mm)</th>
+          <th>External width (mm)</th>
+        </tr>
+        <tr>
+          <td>1AAA</td>
+          <td>12,192</td>
+          <td>2,438</td>
+        </tr>
+      </table>
+    </div>
+  
+    <h2 id="Table with a caption">Table with a caption</h2>
+    <div class="container inner-shadow">
+      <p>
+        Use the &lt;caption&gt; tag for the table heading.
+        <caption> can be styled in CSS.
+      </p>
+      <table>
+        <caption>Vessel Clearance Fees and Charges</caption>
+        <tr>
+          <th>Sub Category</th>
+          <th>Description</th>
+          <th>Unit</th>
+          <th>Fee ($)</th>
+        </tr>
+        <tr>
+          <td>Fee for Service</td>
+          <td>Vessel > 25m – Pratique – 1st 2 hrs</td>
+          <td>2 hrs</td>
+          <td>$1050.00</td>
+        </tr>
+      </table>
+    </div>
+  
+    <h2 id="Complex data tables">Complex data tables</h2>
+    <div class="container inner-shadow">
+      <p>
+        Complex tables should use the scope attribute to associate data cells with column headers. Scope can also be used to associate row headers with data cells.
+      </p>
+      <table>
+        <caption>Contact Information</caption>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Fax</th>
+          <th scope="col">City</th>
+        </tr>
+        <tr>
+          <th scope="row">Joel Garner</th>
+          <td>412-212-5421</td>
+          <td>412-212-5400</td>
+          <td>Sydney</td>
+        </tr>
+        <tr>
+          <th scope="row">Clive Lloyd</th>
+          <td>410-306-1420</td>
+          <td>410-306-5400</td>
+          <td>Melbourne</td>
+        </tr>
+        <tr>
+          <th scope="row">Gordon Greenidgev</th>
+            <td>281-564-6720</td>
+            <td>281-511-6600</td>
+            <td>Brisbane</td>
+        </tr>
+      </table>
+    </div>
+  
+    <h2 id="Complex data tables with multiple rows of headers">Complex data tables with multiple rows of headers</h2>
+    <div class="container inner-shadow">
+      <p>
+        Complex tables with multiple row of headers should use headers, rowspan and colspan attributes.
+      </p>
+  
+      <table>
+        <tr>
+          <th rowspan="2" id="h">Homework</th>
+          <th colspan="3" id="e">Exams</th>
+          <th colspan="3" id="p">Projects</th>
+        </tr>
+        <tr>
+          <th id="e1" headers="e">1</th>
+          <th id="e2" headers="e">2</th>
+          <th id="ef" headers="e">Final</th>
+          <th id="p1" headers="p">1</th>
+          <th id="p2" headers="p">2</th>
+          <th id="pf" headers="p">Final</th>
+        </tr>
+        <tr>
+          <td headers="h">15%</td>
+          <td headers="e e1">15%</td>
+          <td headers="e e2">15%</td>
+          <td headers="e ef">20%</td>
+          <td headers="p p1">10%</td>
+          <td headers="p p2">10%</td>
+          <td headers="p pf">15%</td>
+        </tr>
+      </table>
+    </div>
+  
+    <h2 id="Layout table">Layout table</h2>
+    <div class="container inner-shadow">
+      <p>
+        Where possible, tables should not be used for layout. However if a table is used for layout because of a widget library or the support of legacy code, the table element should have a role attribute of presentation, and should NOT have a
+        <caption>
+          and
+          <th> tags or scope and header attributes.
+      </p>
+  
+      <table role="presentation">
+        <tr>
+          <td>
+            <label for="firstName">First name</td>
+          <td>
+            <input id="firstName" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="lastName">Last name</td>
+          <td>
+            <input id="lastName" type="text" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="dob">Date of birth (DD/MM/YYYY)</td>
+          <td>
+            <input id="dob" type="text" />
+          </td>
+        </tr>
+      </table>
+    </div>
+  
+    <h2 id="Labels">Labels</h2>
+    <div class="container inner-shadow">
+      <p>
+        Every form input should have a label. The label tag should have a for attribute. This applies to input (all types), select and textareas. Where a label is not possible use the placeholder and title attribute.
+      </p>
+      <label for="input1">First name</label>
+      <input id="input1" type="text"></input>
+  
+      <!-- Where a label is not possible use the placeholder attribute and title attribute -->
+      <input type="text" placeholder="Search My Site" title="Search My Site"></input>
+    </div>
+  
+  
+    <h2 id="Required fields">Required fields</h2>
+    <div class="container inner-shadow">
+      <p>
+        A mandatory field should have the required attribute. The label for a mandatory input should have either the word required or an asterisk to indicate that the field is mandatory. If an asterisk is used, add some wording to explain what the asterisk represents
+        should be presented to the top of the form. E.g. * indicates required field
+      </p>
+      <label for="reqInput">A label for the required input *</label>
+      <input id="reqInput" type="text" required></input>
+    </div>
+  
+    <h2 id="Textarea">Textarea</h2>
+    <div class="container inner-shadow">
+      <p>
+        If a textarea has maximum character limit (which it should) this must be specified in the label. The textarea should also set the value to the maxlength attribute.
+      </p>
+      <div class="wrapper">
+        <h4>Details (100 character limit)</h4>
+        <textarea name="the-textarea" id="the-textarea" maxlength="100" placeholder="Enter Your Text Here"></textarea>
+        <div id="the-count">
+          <p id="characterNotification">
+            You have <span id="characterCounter">100</span> characters left</p>
+        </div>
+      </div>
+    </div>
+  
+    <h2 id="Radio buttons">Radio buttons</h2>
+    <div class="container inner-shadow">
+      <p>
+        For radio and checkboxes, use fieldset and legend to group multiple controls
+      </p>
+      <fieldset>
+        <legend>Choose a shipping method:</legend>
+        <input id="overnight" type="radio" name="shipping" value="overnight">
+        <label for="overnight">Overnight</label>
+        <input id="twoday" type="radio" name="shipping" value="twoday">
+        <label for="twoday">Two day</label>
+        <input id="ground" type="radio" name="shipping" value="ground">
+        <label for="ground">Ground</label>
+      </fieldset>
+    </div>
+  
+    </h2 id="Radio buttons with aria-descibed by">Radio buttons with aria-descibed by</h2>
+    <div class="container inner-shadow">
+      <p>
+        If a fieldset cannot be used, an aria-describedby attribute should be used.
+      </p>
+      <h4 id="shipping-method">Choose a shipping method:</h4>
+      <input id="overnight" type="radio" name="shipping" value="overnight" aria-describedby="shipping-method">
+      <label for="overnight">Overnight</label>
+      <input id="twoday" type="radio" name="shipping" value="twoday" aria-describedby="shipping-method">
+      <label for="twoday">Two day</label>
+      <input id="ground" type="radio" name="shipping" value="ground" aria-describedby="shipping-method">
+      <label for="ground">Ground</label>
+    </div>
+  
+    <h2 id="Blockquote">Blockquote</h2>
+    <div class="container inner-shadow">
+      <blockquote>
+        "Remember, wherever you go, there you are."
+        <br> - Buckaroo Banzai
+      </blockquote>
+    </div>
+  
+    <h2 id="Date Fields">Date Fields</h2>
+    <div class="container inner-shadow">
+      <p>
+        Date fields should show the format in the label. If you are using HTML5 consider using the input type="date".
+      </p>
+      <label for="doa">Date of arrival (dd/mmm/yyyy):</label>
+      <input id="doa" type="date"></input>
+    </div>
+  
+    <h2 id="Tooltip">Tooltip</h2>
+    <div class="container inner-shadow">
+      <p>
+        An accessible tooltip should:
+        <ul>
+          <li>appear on focus, not just mouseover </li>
+          <li>have the aria-describedby attribute on the element which points to the tooltip container </li>
+        </ul>
+      </p>
+  
+      <label for="dob-t">Date of Birth</label>
+      <input id="dob-t" type="text" aria-describedby="tooltip-for-dob" onfocus="showTooltip()" onblur="hideTooltip()" />
+      <span id="tooltip-for-dob" class="tooltip-for-dob-hide">
+     Should be in the format dd/mm/yyyy 
+  </span>
+    </div>
+  
+    <div id="toolsetc" class="section">
+      <h2 id="A collection of handly links">A collection of handly links</h2>
+        <div class="container inner-shadow">
+      <p>All links open in a new window</p>
+  
+      <h3>Just general awesome people</h3>
+      <ul>
+        <li><a target="_blank" href="https://codepen.io/chris-hore/">Follow this guy on Codepen</a>, he's pretty awsome, see the <a target="_blank" href="https://codepen.io/collection/AdbpPx/">Accessibility Sandpit</a> for some awesome samples, did I mention he's awesome? <a href="https://twitter.com/scratch2k">@scratch2k</a></li>
+        <li><a target="_blank" href="http://marcysutton.com/">Marcy Sutton - Accessibility gal</a> <a target="_blank" href="https://twitter.com/marcysutton">@marcysutton</a></li>
+        <li><a target="_blank" href="http://www.paciellogroup.com/blog/">Steve Faulkner - Accessibility guy</a> <a href="https://twitter.com/stevefaulkner">@stevefaulkner</a></li>
+        <li><a target="_blank" href="http://chriscoyier.net/">Chris Coyier</a> - <a target="_blank" href="https://css-tricks.com">css tricks</a> and
+          <A target="_blank" href="https://www.codepen.io">codepen</A> guy<a target="_blank" href="https://twitter.com/chriscoyier">@chriscoyier</a></li>
+        <li><a target="_blank" href="https://codepen.io/quezo/">Alex Vasquez - the guy behind the guy who is behind Codepen</a></li>
+      </ul>
+  
+      <h3>Developer tools, code samples, and scripts</h3>
+      <ul>
+        <li><a target="_blank" href="https://github.com/patrickfox/a11y_kit"> Accessibility scripts for extending jQuery to allow any element to receive focus, announce any text to a screen reader etc..</a></li>
+        <li><a target="_blank" href="https://github.com/dylanb/dylanb.github.io"> The ARIA Periodic Table</a></li>
+        <li><a target="_blank" href="https://github.com/furf/jquery-ui-touch-punch"> Enable touch controls in jQueryUI</a></li>
+        <li><a target="_blank" href="https://github.com/joeldbirch/superfish">Superfish, an accessible menu system</a></li>
+        <li><a target="_blank" href="http://selectivizr.com/">Enable CSS3 pseudo selectors in IE6-8</a></li>
+        <li><a target="_blank" href="http://oaa-accessibility.org/examples/">Many examples of accessible web components and ARIA use</a></li>
+        <li><a target="_blank" href="http://www.karlgroves-sandbox.com/">The viking himself and a bunch of accessible code examples</a></li>
+        <li><a target="_blank" href="http://files.paciellogroup.com/training/commonsamples/validation_feedback/index.html?useFloats=false&colNumbers=3&useFieldInstructions=true"> Excellent examples of accesssible forms and form errors</a></li>
+        <li><a target="_blank" href="https://dojotoolkit.org/">Dojo Toolkit and Dijit, a highly accessible JavaScript toolkit</a></li>
+      </ul>
+  
+      <h3>Accessibility Testing tools</h3>
+      <ul>
+        <li><a target="_blank" href="https://github.com/squizlabs/HTML_CodeSniffer"> HTML Codesniffer</a></li>
+        <li><a target="_blank" href="http://wave.webaim.org/">Webaim accessibility checker</a> (<a href="http://wave.webaim.org/">Chrome extension</a>)</li>
+        <li><a target="_blank" href="https://leaverou.github.io/contrast-ratio"> Lea Verous's colour contrast checker</a></li>
+        <li><a target="_blank" href="http://snook.ca/technical/colour_contrast/colour.html#fg=33FF33,bg=333333">Snooks colour contrast checker</a></li>
+        <li><a target="_blank" href="http://webaim.org/resources/contrastchecker/">Webaim colour contrast checker</a></li>
+        <li><a target="_blank" href="https://www.w3schools.com/tags/ref_colorpicker.asp?colorhex=FF0000"> w3schools colour picker</a></li>
+        <li><a target="_blank" href="http://sitebeam.net/">Sitebeam - check your websites for everything</a></li>
+        <li><a target="_blank" href="http://tenon.io/">Tenon.io - Automated testing, has integration with Visual Studio</a></li>
+        <li><a target="_blank" href="http://www.chromevox.com/">ChromeVox - Chrome integrated screen reader</a></li>
+        <li><a target="_blank" href="http://www.karlgroves.com/2013/09/07/diagnostic-css-super-quick-web-accessibility-testing/">Diagnostic.css, a quick way to expose accessibility issues on any page</a></li>
+        <li><a target="_blank" href="http://heydonworks.com/revenge_css_bookmarklet/">Revenge.css - similar to Diagnostic.css</a></li>
+      </ul>
+  
+      <h3>General Accessibility</h3>
+      <ul>
+        <li><a target="_blank" href="https://www.wuhcag.com/">Wuhcag.com, highly recommend</a> (<a href="https://www.wuhcag.com/wcag/">Luke's book on WCAG 2.0</a>)</li>
+        <li><a target="_blank" href="http://substantial.com/blog/2014/07/22/how-i-audit-a-website-for-accessibility/">Marcy Sutton's guide on accessibility testing</a></li>
+        <li><a target="_blank" href="http://karlgroves-sandbox.com/CheatSheets/ARIA-Cheatsheet.html"> WAI-ARIA cheat sheet</a></li>
+        <li><a target="_blank" href="http://www.seamlesscms.com/Insights/Content-Accessibility#textalternative"> 10 Things every dev can do to make their sites more accessible</a></li>
+      </ul>
+  
+      <h3>Style Guides and design methodologies</h3>
+      <ul>
+        <li><a target="_blank" href="https://smacss.com/">SMACSS</a></li>
+        <li><a target="_blank" href="http://cssguidelin.es/">CSS Guidelines, high level advice for writing sane, manageable, scalable CSS</a></li>
+        <li><a target="_blank" href="http://juicystudio.com/services/csstest.php"> Juicy Studios CSS Analyser</a></li>
+        <li><a target="_blank" href="https://code.facebook.com/accessibility"> Facebook's Accessibility toolkit</a></li>
+        <li><a target="_blank" href="http://www.sitepoint.com/bem-smacss-advice-from-developers/">BEM and SMACSS: Advice From Developers Who’ve Been There</a></li>
+      </ul>
+  
+      <h3>Sample design patterns</h3>
+      <ul>
+        <li><a target="_blank" href="https://maxdesign.com.au/jobs/sample-accessibility/">Accessibility Tests Pattern Library by <a href="https://twitter.com/russmaxdesign">Russ Weakley</a></li>
+        <li><a target="_blank" href="http://styletil.es/">A visual web design process for the responsive web</a></li>
+        <li><a target="_blank" href="http://ux.mailchimp.com/patterns"> Mailchimp design patterns</a></li>
+        <li><a target="_blank" href="https://codepen.io/patterns"> Codepen</a></li>
+        <li><a target="_blank" href="https://www.google.com/design/spec/material-design/introduction.html"> Google material design</a></li>
+      </ul>
+      </div>
+      
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>
