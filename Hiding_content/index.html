@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
-    <link rel="stylesheet" href="./index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
     <h1>I am a headline made with HTML</h1>
-<p>And I am a simple text paragraph. The color of this text is styled with CSS. Click the button below to remove me through the power JavaScript.</p>
-<button>Hide the text above</button>
-<script>
-    $('button').on('click', function() {
-	$('p').css('opacity', 0);
-});
-</script>
-</body>
+    <p id="Hiding">
+      And I am a simple text paragraph. The color of this text is styled with
+      CSS. Click the button below to remove me through the power JavaScript.
+    </p>
+    <button id="btn" onclick="fun()">Hide the text above</button>
+    <script>
+      function fun() {
+        var NAME = document.getElementById("Hiding");
+        NAME.className = "hidden";
+      }
+    </script>
+  </body>
 </html>
