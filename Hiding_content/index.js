@@ -1,3 +1,3 @@
-$('button').on('click', function() {
-	$('p').css('opacity', 0);
+$("#btn").click(function () {
+	("#Hiding").addClass("hidden");
 });
