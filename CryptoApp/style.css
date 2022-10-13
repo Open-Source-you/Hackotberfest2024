@@ -1,0 +1,38 @@
+body{
+    background:#165d9a;
+  }
+
+.myContent{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+  .card{
+  
+    width:400px;
+    height:200px;
+    border: 1px solid pink;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    background-color:rgba(17,25,40,0.29) ;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    backdrop-filter: blur(10px) saturation(172%);
+    -webkit-backdrop-filter: blur(10px) saturation(172%);
+  
+  }
+  .card img{
+    width: 400px;
+    height:200px;
+    background-size: cover;
+    opacity: 0.2;
+    margin-top: 140px;
+  }
+  .card h3{
+    color: white;
+    position: relative;
+    bottom:180px;
+  }
