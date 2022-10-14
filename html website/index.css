@@ -1,0 +1,157 @@
+.c-pointer {
+    cursor: pointer;
+}
+
+.no-scroll{
+    overflow: hidden;
+    background-color: #2f3e4e;
+}
+
+.fz-2 {
+    font-size: 2em;
+}
+.fz-4 {
+    font-size: 4em;
+}
+
+.fz-5 {
+    font-size: 5em;
+}
+
+.h-100 {
+    height: 100vh !important;
+}
+
+.lobster{
+    font-family: lobster, cursive;
+}
+.raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+.ls-5{
+    letter-spacing: 5px;
+}
+.ls-4{
+    letter-spacing: 4px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#slide-toggle {
+    z-index: 99999;
+    position: relative;
+    color: #fff;
+    border: 2px solid #666;
+    padding: 5px 10px;
+    top: 20px;
+}
+#menu-slider.hide {
+    left: -100%;
+}
+#menu-slider {
+    height: 100%;
+    background-color: #2f3e4e;
+    overflow-y: auto;
+    overflow-y: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.4s;
+    z-index: 9999;
+}
+#menu-slider ul {
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+}
+#menu-slider ul li {
+    list-style-type: none;
+}
+#menu-slider ul li a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+#menu-slider ul li a:hover {
+    color: #d74703;
+}
+
+.overlay {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 99;
+}
+#main-warapper.left {
+    left: 20%;
+    background-color: #2f3e4e;
+}
+#main-warapper {
+    position: absolute;
+    left: 0;
+    transition: all 0.4s;
+    width: 100%;
+    top: 0;
+}
+#image-header {
+    background-image: url('https://img.youm7.com/ArticleImgs/2018/2/2/98294-%D8%A3%D9%88%D9%81%D9%8A%D8%B3-2019.jpg');
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+#image-header .layer {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+#logo {
+    font-size: 6em;
+}
+#contact-us{
+    background-image: url('http://kapishsolutions.com/wp-content/uploads/2013/10/contact-us-banner.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    height: 230px;
+    position: relative;
+}
+
+#contact-us .layer{
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+#contact-us p,#contact-us h2,#contact-us button{
+    z-index: 1;
+}
+footer{
+    background-color: #272727;
+}
+footer #copyright {
+    background-color: #343434;
+}
+
+footer i{
+    font-size: 22px;
+}
