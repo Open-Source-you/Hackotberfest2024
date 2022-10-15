@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+.burger {
+  width: 120px;
+  height: 120px;
+  background-color: beige;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  /* box shadow -> right left blur color(percent) */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+.container .burger .bar {
+  width: 80px;
+  height: 6px;
+  background-color: rgb(47, 47, 47);
+  margin: 12px;
+  border-radius: 6px;
+  transition: all 200ms ease-in-out;
+}
+.burger:hover .bar1 {
+  transform: translateY(30px) rotateZ(45deg);
+}
+.burger:hover .bar3 {
+  transform: translateY(-30px) rotateZ(-45deg);
+}
+.burger:hover .bar2 {
+  transform: scale(0);
+}
