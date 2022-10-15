@@ -1,0 +1,87 @@
+body {
+  background-image: url("img.jpg");
+  
+  background-size: cover;
+  background-color: #111
+  
+}
+
+
+
+video {
+  border-radius: 50px;
+ 
+  border: 1px solid rgb(0, 0, 0);
+  padding: 0;
+  margin: 0;
+  margin-top: 30px;
+  width: 918px;
+  height: 514px;
+  background-color: black;
+  margin: auto;
+  display: block;
+  }
+  #buttons {
+  text-align: center;
+  }
+  button{
+  font-family: Helvetica Neue, "Arial", Helvetica, Verdana, sans-serif;
+  }
+  .awesome{
+    color: #111;
+    /* width: 100%; */
+    height: fit-content;
+  background: rgb(255, 255, 255); 
+  opacity: 0.5;      
+  display: inline-block;
+  outline: none;
+  border-radius: 100px;
+  padding: 5px 10px 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 0;
+  /* -moz-border-radius: 0px; */
+  /* -webkit-border-radius: 0px; */
+  /* -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5); */
+  /* -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5); */
+  /* text-shadow: 0 -1px 1px rgba(0,0,0,0.25); */
+  /* border-bottom: 1px solid rgba(0,0,0,0.25); */
+  position: relative;
+  cursor: pointer;
+  }
+  .awesome:hover {
+  background-color: #111;
+  color: rgb(112, 255, 99);
+  opacity: 0.6;
+  }
+  .large.awesome {
+  font-size: 14px;
+  padding: 8px 14px 9px;
+  }
+  .red.awesome {
+  background-color: #e33100;
+  }
+  .blue.awesome {
+  background-color: #2daebf;
+  }
+  .blue.awesome:hover {
+  background-color: #007d9a;
+  }
+  .red.awesome:hover {
+  background-color: #872300;
+  }
+
+.thumbnail{
+  display: flex;
+  flex-direction: column;
+  height: 125px;
+  width: 195px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.thumbPosition{
+  display: flex;
+  flex-direction: row;
+}
