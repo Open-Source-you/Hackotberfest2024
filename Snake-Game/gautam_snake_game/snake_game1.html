@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Snake Game using HTML and Javascript - Studytonight</title>
+    <style>
+        .game-box {
+            text-align:center;   
+        }
+        .game-info {
+            text-align:center; 
+            font-family:arial;
+            line-height:24px;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="game-box"><canvas id="canvas" width="400" height="400"></canvas></div>
+    <div class="game-info">
+        <h2>Snake Game</h2>
+        <p id="game-status"></p>
+        <p id="game-score"></p>
+    </div>
+
+    <script>
+      var canvas, ctx, gameControl, gameActive;
+      // render X times per second
+      var x = 8;
+      
+      const CANVAS_BORDER_COLOUR = 'black';
+      const CANVAS_BACKGROUND_COLOUR = "white";
+      const SNAKE_COLOUR = 'lightgreen';
+      const SNAKE_BORDER_COLOUR = 'darkgreen';
+
+
+      window.onload = function() {
+        canvas = document.getElementById("canvas");
+        ctx = canvas.getContext("2d");
+
+        document.addEventListener("keydown", keyDownEvent);
+
+        gameControl = startGame(x);
+      };
+      
+    </script>
+  </body>
+</html>
