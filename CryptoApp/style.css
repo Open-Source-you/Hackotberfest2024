@@ -1,5 +1,5 @@
 body{
-    background:#165d9a;
+    background:black;
   }
 
 .myContent{
@@ -12,11 +12,13 @@ body{
   
     width:400px;
     height:200px;
-    border: 1px solid pink;
-    margin-top: 20px;
-    border-radius: 20px;
+    border: 1px solid black;
+    margin-top: 30px;
     display: flex;
-    background-color:rgba(17,25,40,0.29) ;
+    border-radius: 23px;
+    box-shadow:  6px 6px 12px #313535,
+             -6px -6px 12px #2a2929;
+    background-color:rgba(17, 21, 27, 0.29) ;
     flex-direction:column;
     justify-content:center;
     align-items: center;
