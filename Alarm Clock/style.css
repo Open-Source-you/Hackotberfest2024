@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: lightcoral;
+    background: linear-gradient(90deg, lightcoral 50%, lightgreen 50%)
+}
+
+h1 {
+    text-align: center;
+}
+
+.currTime {
+    display: flex;
+    font-size: 50px;
+    margin-top: -50px;
+}
+
+.currDay {
+    display: flex;
+    font-size: 22px;
+    margin-top: -70px;
+}
+
+.set {
+    display: flex;
+    height: 36px;
+    font-weight: bolder;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    border: 1px solid white;
+    margin-top: 50px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    padding-bottom: 20px;
+    background: lightseagreen;
+}
+
+.text {
+    font-size: 30px;
+}
+
+img {
+    margin-top: -50px;
+}
+
+#alarmSubmit{
+    /* background-color:red; */
+    margin-top: 10px;
+    height:30px;
+    border-radius:50px;
+    background-image: linear-gradient(to right, #0099f7, #f11712);
+    border-color:lightseagreen;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin-left:50px;
+    font-weight: bolder;
+    color: white;
+}
+
+#alarm{
+    height:25px;
+    font-weight: bolder;
+    background-color:white;
+    color:black;
+    border-color: lightblue;
+}
