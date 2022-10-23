@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #para{
+            /* justify-content: center;
+            margin: auto;*/
+            justify-items: normal; 
+            text-align: center;
+
+        }
+        .btn{
+            background-color: aqua;
+            border-radius: 10px;
+              justify-content: center; 
+            /* display: center center;  */
+            text-align: center;
+            margin:auto;
+            display: flex;
+            text-align: center;
+            font-size:25px;
+            height: 30px;
+            width: 70px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>going to learn</h1>
+        <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, expedita. Ipsum consectetur voluptate libero, vero omnis non consequatur, ut dolore corrupti odit, vitae rem commodi itaque facere nihil unde eaque repellendus! Soluta recusandae inventore quia voluptatem id deleniti eligendi ut eius repudiandae praesentium facere totam est, veniam odit modi fugit amet eum veritatis nobis culpa molestiae magni. Sint reiciendis accusamus excepturi atque illum labore placeat, accusantium obcaecati repellendus a, quod voluptatum aperiam quibusdam ipsa porro aliquam quis ipsam error assumenda aut? Voluptas illum minima nobis. Ut provident, molestias neque magnam deleniti quaerat aliquid sequi! Enim, iure totam quo voluptatem ipsam rerum ab incidunt dolor, nisi ea cumque molestiae, nam sint eaque laudantium facere porro alias sed sit dolore deleniti saepe necessitatibus ipsum repellat. Excepturi facilis nesciunt assumenda, atque porro, aspernatur ab sint minima consequuntur perspiciatis esse sit ipsam libero voluptas. Natus, autem nostrum. Quidem, iure deserunt quae maiores tenetur sunt beatae libero rem odio neque eum aliquam alias maxime reiciendis tempore in reprehenderit quas officiis accusamus! Tenetur molestias cumque natus, aliquid necessitatibus ab, voluptatum alias saepe maiores nulla ipsam nesciunt velit quisquam repellendus. Sapiente delectus, dolor esse et, quidem a rerum odio sed eaque, placeat exercitationem pariatur quaerat amet minus!</p>
+        <button class="btn" onclick="hide()"> pallat</button>
+        <script>
+            function hide(){
+                let btn =document.getElementById('btn');
+                let para = document.getElementById('para');
+
+                if(para.style.display != 'none'){
+                    para.style.display = 'none';
+                }
+                else
+                para.style.display = 'block';
+
+            }
+        </script>
+
+    </div>
+</body>
+</html>

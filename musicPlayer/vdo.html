@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vdo.css">
+    <script src="vdo.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- play button -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- pause button -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- load -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- forword -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- backward -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- step forward -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- fast forward -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- fast backward -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- volume up -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- volume down -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- mute -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- unmute -->
+
+
+
+</head>
+<body>
+<div>
+
+
+     
+    <video id="video" class="thumbPostion"  controls="" preload="none" poster="http://media.w3.org/2010/05/sintel/poster.png">
+        <source id="mp4" src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4">
+         <p>Your user agent does not support the HTML5 Video element.</p>
+   </video>
+
+</div>
+
+
+
+
+
+
+  <div id="buttons">
+        <button class="large awesome" onclick="document._video.load()">
+            <i class="fa fa-stop-circle-o" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.play()">  
+            <i class="fa fa-play" style="font-size:18px;color:red"></i>
+            
+        </button>
+        <button class="large awesome" onclick="document._video.pause()">
+            <i class="fa fa-pause" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.currentTime+=10">
+            <i class="fa fa-forward" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.currentTime-=10">
+            <i class="fa fa-backward" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.currentTime+=20">
+            <i class="fa fa-step-forward" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.playbackRate++">
+            <i class="fa fa-fast-forward" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.playbackRate--">
+            <i class="fa fa-fast-backward" style="font-size:18px;color:red"></i>
+        </button>
+        <!-- <button class="large awesome" onclick="document._video.playbackRate+=0.1">
+            <i class="fa fa-caret-square-o-up" style="font-size:18px;color:red"></i>
+        </button> -->
+        <!-- <button class="large awesome" onclick="document._video.playbackRate-=0.1">
+            <i class="fa fa-caret-square-o-down" style="font-size:18px;color:red"></i>
+        </button> -->
+        <button class="large awesome" onclick="document._video.volume+=0.1">
+            <i class="fa fa-volume-up" style="font-size:18px;color:red"></i>
+        </button>
+        <button class="large awesome" onclick="document._video.volume-=0.1">
+            <i class="fa fa-volume-down"  style="font-size:18px;color:red"></i>
+            </button>
+
+        <button class="large awesome" onclick="document._video.muted=true">
+            <i class="fas fa-volume-mute volumen"  style="font-size:18px;color:red"></i>
+            
+        </button>
+        <button class="large awesome" onclick="document._video.muted=false">
+            <i class="fa fa-volume-off" style="font-size:18px;color:red"></i>
+        </button><br>
+
+        
+        <div class="thumbPosition">
+            <a  onclick="switchVideo(0);" >
+                <img src="http://media.w3.org/2010/05/sintel/poster.png" alt="" class="thumbnail">
+                </a>
+            <a  onclick="switchVideo(1);" >
+            <img src="https://media.w3.org/2010/05/bunny/poster.png" alt="" class="thumbnail">
+            </a>
+            <a onclick="switchVideo(2);" >
+            <img src="https://i.pinimg.com/736x/27/13/9b/27139b573b1d9d5fe66e7e27e7127563.jpg" alt="" class="thumbnail">
+            </a>
+            <a  onclick="switchVideo(3);" >
+            <img src="https://media.w3.org/2010/05/video/poster.png" alt="" class="thumbnail">
+            </a>
+            </div>
+
+
+        <!-- <button class="large blue awesome" onclick="switchVideo(0);">Sintel teaser</button>
+        <button class="large blue awesome" onclick="switchVideo(1);">Bunny trailer</button>
+        <button class="large blue awesome" onclick="switchVideo(2);">Bunny movie</button>
+        <button class="large blue awesome" onclick="switchVideo(3);">Test movie</button> -->
+      </div>
+
+
+
+</body>
+</html>
