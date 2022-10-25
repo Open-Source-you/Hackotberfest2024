@@ -10,23 +10,25 @@
      
 }
 body{
-    background: rgb(37, 31, 31);
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+
 }
 
 h1{
     text-align: center;
     color: white;
 }
-.submit-btn{
-    background-color: rgb(141, 64, 224);
+.values{
+    background-color: whitesmoke;
 }
 .bmi-value{
-    background-color: rgb(51, 255, 0);
+    background-color: rgb(238, 222, 234);
     display: grid;
     grid-template-rows: 50% 50%;
 }
 .status{
-    background-color: rgb(255, 127, 191);
+    background-color: rgb(240, 173, 207);
     display: grid;
     grid-template-rows: 50% 50%;
     
