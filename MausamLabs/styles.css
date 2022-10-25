@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap');
+body{
+    /* background-image: url('weather.jpg') ; */
+    font-family: 'Poppins', sans-serif;
+    /* Location of the image */
+  background-image: url(bgweather.jpg);
+  
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+  
+  /* This is what makes the background image rescale based
+     on the container's size */
+  background-size: cover;
+  }
+  h1,h7,label{
+      font-weight: bold;
+  }
+  h1{
+    color: white;
+  }
+  label{
+      font-size: 1.4em;
+  }
+  .btn{
+    border-radius: 25px;
+    background-color: #045de9;
+    background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    color: white;
+  }
+  .card{
+    background-color: #bbe1fa;
+    opacity: .8;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+  }
+  .card:hover{
+   -webkit-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
+  box-shadow: 4px 10px 35px -15px rgba(0,0,0,0.75);
+  }
+  img{
+   display:block; 
+   width:30%; 
+   margin-left: auto; 
+   margin-right: auto;
+  }
+
+  input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #d3dbff;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('icons8-search-26.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input[type=text]:focus {
+    width: 100%;
+  }
+  input:focus{
+    outline: none;
+}
+/* @media screen and (min-width: 768px) {
+  
+}
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size:60px;
+  }
+  div.card {
+    width: 200px;
+    font-size: 18px;
+
+  }
+  input[type=text]{
+    width: 330px;
+  }
+  .btn{
+    width: 220px;
+    font-size:25px;
+  }
+} */

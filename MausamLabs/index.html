@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/logo96.png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- NAVBAR STARTS -->
+    <nav class="navbar is-transparent ">
+        
+        <div class="toggleWrapper">
+            <input type="checkbox" class="dn btn inverted" id="dn" />
+            <label for="dn" class="toggle">
+                <span class="toggle__handler">
+                    <span class="crater crater--1"></span>
+                    <span class="crater crater--2"></span>
+                    <span class="crater crater--3"></span>
+                </span>
+                <span class="star star--1"></span>
+                <span class="star star--2"></span>
+                <span class="star star--3"></span>
+                <span class="star star--4"></span>
+                <span class="star star--5"></span>
+                <span class="star star--6"></span>
+            </label>
+        </div>
+    </nav>
+    <!-- NAVBAR ENDS -->
+    <div class="container"><br>
+        <div class="tile is-ancestor">
+            <div class="tile is-6 is-vertical is-parent mx-4">
+                <div class="tile is-child box inverted">
+                    <figure class="image is-4by3">
+                        <img src="images/sapiens.svg">
+                    </figure>
+                </div>
+            </div>
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+                    <p class="title">What's the Weather?</p>
+                    <form action="" id="myForm">
+                        <div class="control has-icons-left">
+                            <div class="field is-grouped">
+                                <p class="control is-expanded">
+                                    <input class="input is-rounded inverted" type="text" placeholder="Search City"
+                                        id="city_name">
+                                    <span class="icon is-medium is-left">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </p>
+                                <p class="control">
+                                    <button type="submit"
+                                        class="button is-primary is-light is-rounded inverted"><strong>Search</strong></button>
+                                </p>
+                            </div>
+                        </div><br>
+                        <div class="tile is-parent weather_box  is-8">
+                            <article class="tile is-child box has-text-centered">
+                                <figure class="image is-128x128 image_city ml-6 inverted"
+                                    style="margin-left: 5.5rem !important;">
+                                    <img src="images/011-cloud.png">
+                                </figure>
+                                <p class="title title_city">It's a lovely day.</p>
+                                <p class="title title_temp ">0°</p>
+                                <p class="sub-title">Celcius</p>
+                                <p class="title is-size-4">Feels like <span class="feels"></span> </p>
+                                <nav class="level is-mobile">
+                                    <div class="level-left">
+                                        <div class="level-item">
+                                            <p class=" is-5">
+                                                <strong class="is-size-4 place">Place</strong>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="level-right subtitle">
+                                        <p class="level-item is-size-4 date"><strong>Mumbai</strong></p>
+                                    </div>
+                                </nav>
+                            </article>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Made</strong> with <i class="fa fa-heart" style="color:red;"></i> <a
+                    href="https://mausamlabs.netlify.app/">Siddharth Sharma</a>.
+            </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let button = document.querySelector('.btn')
+        button.addEventListener("click me", function () {
+            document.documentElement.classList.toggle('dark-mode');
+            document.querySelectorAll('.inverted').forEach((result) => {
+                result.classList.toggle('invert');
+            });
+        });
+  </script>    
+    <script src="main.js"></script>
+</body>
+
+</html>

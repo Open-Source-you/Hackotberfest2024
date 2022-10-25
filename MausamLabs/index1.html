@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+         <link rel="stylesheet" href="styles.css">
+         <link rel="manifest" href="manifest.json">
+         <link rel="apple-touch-icon" href="images/logo96.png">
+</head>
+<body>
+          <div class="container" style="max-width: 100%;height: 500px;">
+            <div class="row justify-content-center" style="height:300px;">
+                <h1 class="text-center" >Weather</h1>
+              <div class="card text-center hoverable" style="width: 35rem;">
+                <div class="card-body">
+                    <p class="card-text">
+                      <label for="" class="form-check-label">Enter the city name:</label><br>
+                      <input id="last_name" type="text" class="validate city">
+                      <div>
+                        <button id="getWeatherforecast" class="btn btn-light">Get weatherr</button>
+                      </div>
+                      <div><br></div>
+                    <div id="showWeatherForecast"></div>
+                    </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous">
+ </script>
+<script>$(document).ready(function(){
+
+  $("#getWeatherforecast").click(function(){
+          var city = $(".city").val();
+          var key = 'e91c63fb77cd1cb1a1d23874e16dc4af';
+
+          $.ajax({
+              url : 'https://api.openweathermap.org/data/2.5/weather',
+              dataType : 'json',
+              type: 'GET',
+              data:{q:city, appid:key, units:'metric'},
+              success: function(data){
+                  var wf = '';
+                  $.each(data.weather, function(index, val){
+                      wf +='<p><h5>City: </h5><h3><b>' + data.name + "</b><h3><img style='' src=" + val.icon+".gif></p><p><h7>Temperature:</h7> " + data.main.temp + '&deg;C ' + 
+                          '</p> ' + val.main + " , <p><h7>Description: </h7>" + val.description + "</p>"
+                  });
+                  $("#showWeatherForecast").html(wf);
+
+              }
+          });
+      });
+
+      });</script>
+      <script src="scripts.js"></script>
+</body>
+</html>
