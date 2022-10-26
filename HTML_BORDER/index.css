@@ -1,0 +1,48 @@
+h2 {
+    margin: 10px 20px;
+  }
+  .border-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+  }
+  .box-style {
+    background-color: rgb(186, 85, 211, 0.1);
+    padding: 1rem;
+    width: 200px;
+    margin-bottom: 1rem;
+  }
+  .b-t-s {
+    border: 4px #ba55d3;
+    border-top-style: solid;
+  }
+  .b-r-s {
+    border: 4px #ba55d3;
+    border-right-style: solid;
+  }
+  
+  .b-bt-s {
+    border: 4px #ba55d3;
+    border-bottom-style: solid;
+  }
+  .b-l-s {
+    border: 4px #ba55d3;
+    border-left-style: solid;
+  }
+  .one-value {
+    border: 4px #ba55d3;
+    border-style: solid;
+  }
+  .two-value {
+    border: 4px #ba55d3;
+    border-style: inset outset;
+  }
+  .three-value {
+    border: 4px #ba55d3;
+    border-style: dashed hidden double;
+  }
+  .four-value {
+    border: 4px #ba55d3;
+    border-style: dashed groove dotted ridge;
+  }
+  

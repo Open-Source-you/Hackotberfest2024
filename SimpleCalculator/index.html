@@ -1,58 +1,191 @@
-<!DOCTYPE html>
-<html lang="en">
-<body style="background-color:rgb(77, 138, 114);">
+<html>
+  <head>
+    <title>attractive calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Simple calculator</h1>
+    <form name="form1" class="calci" action="calculator.html" method="POST">
+<!-- <<<<<<< HEAD -->
+<input type="text" name="answer" id="display">
+<br></br>
 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <title>Simple Calculator</title>
-</head>
+<input type="button" value="c" onclick="form1.answer.value=''" class="button">
 
-<body>
-    <div class="container">
-        <h1>Normal Calculator</h1>
 
-        <div class="calculator">
-            <input type="text" name="screen" id="screen">
-            <table>
-                <tr>
-                    <td><button>(</button></td>
-                    <td><button>)</button></td>
-                    <td><button>C</button></td>
-                    <td><button>%</button></td>
-                </tr>
-                <tr>
-                    <td><button>7</button></td>
-                    <td><button>8</button></td>
-                    <td><button>9</button></td>
-                    <td><button>X</button></td>
-                </tr>
-                <tr>
-                    <td><button>4</button></td>
-                    <td><button>5</button></td>
-                    <td><button>6</button></td>
-                    <td><button>-</button></td>
-                </tr>
-                <tr>
-                    <td><button>1</button></td>
-                    <td><button>2</button></td>
-                    <td><button>3</button></td>
-                    <td><button>+</button></td>
-                </tr>
-                <tr>
-                    <td><button>0</button></td>
-                    <td><button>.</button></td>
-                    <td><button>/</button></td>
-                    <td><button>=</button></td>
-                </tr>
-            </table>
-        </div>
-    </div>
+<input type="button"  class= "button"value="<" onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)" >
+<input type="button"  class= "button"value="00" onclick="form1.answer.value+='00'">
 
-</body>
-<script src="index.js"></script>
+<input type="button"  class= "operator"value="/" onclick="form1.answer.value+='/'">
+<br></br>
+<input type="button" class= "button" value="7" onclick="form1.answer.value+='7'">
+<input type="button"  class= "button"value="8" onclick="form1.answer.value+='8'">
+<input type="button"  class= "button"value="9" onclick="form1.answer.value+='9'">
 
+<input type="button"  class= "operator"value="*" onclick="form1.answer.value+='*'">
+<br></br>
+
+
+<input type="button" class= "button" value="4" onclick="form1.answer.value+='4'">
+<input type="button"  class= "button"value="5" onclick="form1.answer.value+='5'">
+
+<input type="button"  class= "button"value="6" onclick="form1.answer.value+='6'">
+
+<input type="button"  class= "operator"value="-" onclick="form1.answer.value+='-'">
+<br></br>
+<input type="button"  class= "button"value="1" onclick="form1.answer.value+='1'">
+<input type="button"  class= "button"value="2" onclick="form1.answer.value+='2'">
+
+<input type="button"  class= "button"value="3" onclick="form1.answer.value+='3'">
+
+<input type="button"  class= "operator"value="+" onclick="form1.answer.value+='+'">
+<br></br>
+
+<input type="button" class= "button" value="0" onclick="form1.answer.value+='0'" id="zero">
+
+<input type="button" class= "button" value="." onclick="form1.answer.value+='.'">
+
+<input type="button"  class= "operator" value="=" onclick="form1.answer.value=eval(form1.answer.value)">
+ </form>
+ <a href="scientific calculator/index.html" id="sci">scientific calculator</a>
+
+<!-- ======= -->
+      <input type="text" name="answer" id="display" />
+      <br />
+
+      <input
+        type="button"
+        value="c"
+        onclick="form1.answer.value=''"
+        class="button"
+      />
+
+      <input
+        type="button"
+        class="button"
+        value="<"
+        onclick="form1.answer.value=form1.answer.value.substring(0,form1.answer.value.length*1-1)"
+      />
+      <input
+        type="button"
+        class="button"
+        value="00"
+        onclick="form1.answer.value+='00'"
+      />
+
+      <input
+        type="button"
+        class="operator"
+        value="/"
+        onclick="form1.answer.value+='/'"
+      />
+      <br />
+      <input
+        type="button"
+        class="button"
+        value="7"
+        onclick="form1.answer.value+='7'"
+      />
+      <input
+        type="button"
+        class="button"
+        value="8"
+        onclick="form1.answer.value+='8'"
+      />
+      <input
+        type="button"
+        class="button"
+        value="9"
+        onclick="form1.answer.value+='9'"
+      />
+
+      <input
+        type="button"
+        class="operator"
+        value="*"
+        onclick="form1.answer.value+='*'"
+      />
+      <br />
+
+      <input
+        type="button"
+        class="button"
+        value="4"
+        onclick="form1.answer.value+='4'"
+      />
+      <input
+        type="button"
+        class="button"
+        value="5"
+        onclick="form1.answer.value+='5'"
+      />
+
+      <input
+        type="button"
+        class="button"
+        value="6"
+        onclick="form1.answer.value+='6'"
+      />
+
+      <input
+        type="button"
+        class="operator"
+        value="-"
+        onclick="form1.answer.value+='-'"
+      />
+      <br />
+      <input
+        type="button"
+        class="button"
+        value="1"
+        onclick="form1.answer.value+='1'"
+      />
+      <input
+        type="button"
+        class="button"
+        value="2"
+        onclick="form1.answer.value+='2'"
+      />
+
+      <input
+        type="button"
+        class="button"
+        value="3"
+        onclick="form1.answer.value+='3'"
+      />
+
+      <input
+        type="button"
+        class="operator"
+        value="+"
+        onclick="form1.answer.value+='+'"
+      />
+      <br />
+
+      <input
+        type="button"
+        class="button"
+        value="0"
+        onclick="form1.answer.value+='0'"
+        id="zero"
+      />
+
+      <input
+        type="button"
+        class="button"
+        value="."
+        onclick="form1.answer.value+='.'"
+      />
+
+      <input
+        type="button"
+        class="operator"
+        value="="
+        onclick="form1.answer.value=eval(form1.answer.value)"
+      />
+    </form>
+  </body>
+<!-- >>>>>>> defcb32659035bbe70881273b354bfad1414ef0b -->
 </html>

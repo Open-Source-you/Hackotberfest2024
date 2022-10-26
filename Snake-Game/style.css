@@ -1,0 +1,29 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  height: 95vh;
+  flex-direction: column;
+  color: red;
+  background-color: rgb(255, 193, 193);
+}
+h1 {
+  align-items: center;
+}
+.instrucoes{
+  align-items: right;
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  padding-right: 50px;
+}
+.container {
+  display: flex;
+}
+.jogo {
+  flex-direction: column;
+}
+.icon {
+  size: 10%;
+}
+.icon a{
+  text-decoration: none;
+}

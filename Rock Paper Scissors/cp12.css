@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.screen{
+  height: 400px;
+  width: 100vw;
+  background-color: rgb(104, 104, 219); 
+  text-transform:uppercase ;
+}
+.you{
+    float: left;
+    margin-left: 150px ;
+}
+.computer{
+    float: right;
+    margin-right: 150px;
+}
+.winner{
+    margin: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.your-score{
+    float: left;
+    margin-top: 5rem;
+    margin-left: -200px;
+}
+.comp-score{
+    margin-top: 5rem;
+    float: right;
+    margin-right: -200px; 
+}
+img{
+    height: 150px;
+    width: 150px;
+}
+.controls{
+    display: flex;
+    justify-content: center;
+}
+button{
+    margin: 40px;
+}
