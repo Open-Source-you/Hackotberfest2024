@@ -1,0 +1,53 @@
+.board {
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px;
+    background-color: rgb(152, 54, 8);
+    width: fit-content;
+}
+
+.cells {
+    margin: 2px;
+    border: none;
+    background-color: green;
+}
+
+.white {
+    border-radius: 100px;
+    background-color: white;
+}
+
+.black {
+    border-radius: 100px;
+    background-color: black;
+}
+
+#turn-teller {
+    background-color: green;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#winner-declare {
+    background-color: green;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 900;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.board-aligner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.count-teller {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
