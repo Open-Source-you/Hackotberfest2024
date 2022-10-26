@@ -112,3 +112,8 @@ input[type="submit"]:active {
 #logo:hover {
 	color:cornflowerblue;
 }
+
+.Form{
+	border: 0.5px solid rgb(114, 143, 237);
+	box-shadow: 10px 10px 8px rgb(141, 164, 241);
+}
