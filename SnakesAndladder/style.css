@@ -1,0 +1,73 @@
+#turn-teller {
+    background-color: green;
+    margin: 20px;
+    padding: 10px;
+    font-size: 25px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+}
+
+.board-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+}
+
+#board {
+    background-image: url("./board.png");
+    height: 400px;
+    width: 400px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px 40px 40px 40px 40px 40px 40px;
+}
+
+.red {
+    background-image: url("./redPiece.png");
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    background-position: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.black {
+    background-image: url("./blackPiece.png");
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    background-position: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.roll-button-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: green;
+    padding: 20px;
+}
+
+#roll {
+    height: 60px;
+    width: 60px;
+    border: 1px rgb(1, 69, 1) solid;
+    border-radius: 40px;
+    background-color: rgb(0, 67, 0);
+    font-weight: 900;
+}
+#roll:hover {
+    cursor: pointer;
+}
+
+#roll-display {
+    margin-left: 40px;
+    font-size: 30px;
+}
