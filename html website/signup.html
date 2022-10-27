@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ .formed {
+ 
+    background: rgba( 255, 255, 255, 0.2 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 19px );
+-webkit-backdrop-filter: blur( 19px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+margin-left: 25%;
+margin-top: 7%;
+width: 800px;
+ }
+
+ .form-float {
+     margin-left: 10%;
+     margin-right:10%;
+ }
+
+
+.bts{
+    font-size: 25px;
+    border-radius: 8px;
+    background: linear-gradient(rgb(29, 131, 19), rgb(231, 190, 8), rgb(10, 128, 10)) !important;
+    color: white;
+    width: 632px;
+    height: 45px;
+}
+label{
+    font-size: 28px;
+    /* font-family: monospace; */
+}
+
+h1{
+    text-align: center;
+    color: #1c2237;
+    font-weight: bold;
+    font-size: 50px;
+}
+.form-control{
+    margin-bottom: 3%;
+    font-size:22px;
+    width: 97%;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid black;
+}
+hr{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+</style>
+<body>
+    <form class="formed" action= "/signup" method='POST'>
+        <!-- {% csrf_token %} -->
+        <h1 style="align-items:center">Create Your Account</h1>
+        <hr>
+        <div class="form-float">
+            <label>Full Name </label>&nbsp &nbsp &nbsp &nbsp 
+<input type="text" name="name"  class="form-control" placeholder="Enter Your Full Name Here"><br><br>
+
+    <label>Username  </label> &nbsp &nbsp &nbsp
+    <input type="text" name="username" class="form-control" placeholder="Enter Your Username" aria-label="Username"><br>
+<br>
+    <label>Email </label> &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp 
+<input type="email" name="email"  class="form-control" placeholder="Enter Your Email" ><br><br>
+<label>Country </label> &nbsp &nbsp &nbsp &nbsp &nbsp 
+<select name="country" aria-placeholder="select your country"  class="form-control">
+    <option selected>Choose your location</option>
+    <option value="1">America</option>
+    <option value="2">Russia</option>
+    <option value="3">China</option>   
+    <option value="4">England</option>
+    <option value="5">India</option>
+    <option value="6">Afghanistan</option>
+</select>
+<br>
+<br>
+<label>Password </label>&nbsp &nbsp &nbsp &nbsp 
+<input type="password" name="password"  class="form-control" placeholder="Enter Your Password"><br><br>
+
+<button type="submit" class="bts" onclick="buttonclick()">Submit</button>
+</div>
+<HR>
+    <br>
+    <p style="text-align:center;"><i>By creating this account, you agree to our <span style="color:blue">Privacy Policy</span> & <span style="color:blue">Cookie Policy</span>.</i></p>
+    <br>
+</form>
+<br>
+<br>
+<br>
+
+<script>
+function buttonclick(){
+   
+    alert("you successfully created your account");
+    document.querySelector('.formed').innerHTML = '<h1> Your account has been created Successfully</h1><br><h2>Login Please and show your creativity by creating your own Book and Audio Book<h2>';
+};
+
+</script>
+      </body>
+</html>
