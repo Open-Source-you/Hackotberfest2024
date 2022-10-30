@@ -1,0 +1,214 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class TicTacToe implements ActionListener
+{
+		ImageIcon icon;
+
+		JFrame frame;
+
+		Font font;
+
+		JLabel label;
+
+		JButton btns[]=new JButton[9];
+		
+		boolean xturn;
+
+		TicTacToe(){
+			icon=new ImageIcon("Icon.png");
+
+			Font btn=new Font("Arial",Font.BOLD,50);
+
+			frame=new JFrame("Tic Tac Toe");
+			frame.setSize(270,360);
+			frame.setLocation(550,250);
+			frame.setLayout(null);
+			frame.setBackground(Color.WHITE);
+			frame.setIconImage(icon.getImage());
+			frame.setResizable(false);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+			font=new Font("Courgette",Font.BOLD,50);
+
+			Container c=frame.getContentPane();
+			c.setBackground(Color.BLACK);
+
+			label=new JLabel();
+			label.setSize(250,85);
+			label.setLocation(10,10);
+			label.setHorizontalAlignment(JLabel.CENTER);
+			label.setFont(font);
+			frame.add(label);
+
+			for (int i=0;i<9;i++) {
+			btns[i]=new JButton();
+			btns[i].setSize(75,75);
+			btns[i].setBackground(Color.GREEN);
+			btns[i].setFont(btn);
+			btns[i].setFocusable(false);
+			btns[i].addActionListener(this);
+			frame.add(btns[i]);
+		}
+
+			btns[0].setLocation(10,75);
+			btns[1].setLocation(95,75);
+			btns[2].setLocation(180,75);
+			btns[3].setLocation(10,160);
+			btns[4].setLocation(95,160);
+			btns[5].setLocation(180,160);
+			btns[6].setLocation(10,245);
+			btns[7].setLocation(95,245);
+			btns[8].setLocation(180,245);
+
+			firstTurn();
+
+			frame.setVisible(true);
+		}
+		@Override
+	public void actionPerformed(ActionEvent e) {
+		for(int i=0;i<9;i++){
+			if(e.getSource().equals(btns[i])){
+				if(xturn){
+					if(btns[i].getText()==""){
+						btns[i].setForeground(Color.RED);
+						btns[i].setText("X");
+						xturn=false;
+						label.setText("O Turn");
+						label.setForeground(Color.BLUE);
+						check();
+					}
+				}
+			else{
+				if(btns[i].getText()==""){
+					btns[i].setForeground(Color.BLUE);
+					btns[i].setText("O");
+					xturn=true;
+					label.setText("X Turn");
+					label.setForeground(Color.RED);
+					check();
+				}
+			}
+		}
+	}
+}	
+	public void firstTurn() 
+	{
+		for (int i=1;i<=9;i++) 
+		{
+			if(i%2==1)
+			{
+				xturn=true;
+				label.setText("X Turn");
+				label.setForeground(Color.RED);
+			}
+			if(i%2==0)
+			{
+				xturn=false;
+			}
+		}
+	}
+	public void check()
+	{
+		if((btns[0].getText()=="X")&&
+		   (btns[1].getText()=="X")&&
+		   (btns[2].getText()=="X")){
+			xwins(0,1,2);
+		}
+		if((btns[3].getText()=="X")&&
+		   (btns[4].getText()=="X")&&
+		   (btns[5].getText()=="X")){
+			xwins(3,4,5);
+		}
+		if((btns[6].getText()=="X")&&
+		   (btns[7].getText()=="X")&&
+		   (btns[8].getText()=="X")){
+			xwins(6,7,8);
+		}
+		if((btns[0].getText()=="X")&&
+		   (btns[3].getText()=="X")&&
+		   (btns[6].getText()=="X")){
+			xwins(0,3,6);
+		}
+		if((btns[1].getText()=="X")&&
+		   (btns[4].getText()=="X")&&
+		   (btns[7].getText()=="X")){
+			xwins(1,4,7);
+		}
+		if((btns[2].getText()=="X")&&
+		   (btns[5].getText()=="X")&&
+		   (btns[8].getText()=="X")){
+			xwins(2,5,8);
+		}
+		if((btns[0].getText()=="X")&&
+		   (btns[4].getText()=="X")&&
+		   (btns[8].getText()=="X")){
+			xwins(0,4,8);
+		}
+		if((btns[2].getText()=="X")&&
+		   (btns[4].getText()=="X")&&
+		   (btns[6].getText()=="X")){
+			xwins(2,4,6);
+		}
+		if((btns[0].getText()=="O")&&
+		   (btns[1].getText()=="O")&&
+		   (btns[2].getText()=="O")){
+			owins(0,1,2);
+		}
+		if((btns[3].getText()=="O")&&
+		   (btns[4].getText()=="O")&&
+		   (btns[5].getText()=="O")){
+			owins(3,4,5);
+		}
+		if((btns[6].getText()=="O")&&
+		   (btns[7].getText()=="O")&&
+		   (btns[8].getText()=="O")){
+			owins(6,7,8);
+		}
+		if((btns[0].getText()=="O")&&
+		   (btns[3].getText()=="O")&&
+		   (btns[6].getText()=="O")){
+			owins(0,3,6);
+		}
+		if((btns[1].getText()=="O")&&
+		   (btns[4].getText()=="O")&&
+		   (btns[7].getText()=="O")){
+			owins(1,4,7);
+		}
+		if((btns[2].getText()=="O")&&
+		   (btns[5].getText()=="O")&&
+		   (btns[8].getText()=="O")){
+			owins(2,5,8);
+		}
+		if((btns[0].getText()=="O")&&
+		   (btns[4].getText()=="O")&&
+		   (btns[8].getText()=="O")){
+			owins(0,4,8);
+		}
+		if((btns[2].getText()=="O")&&
+		   (btns[4].getText()=="O")&&
+		   (btns[6].getText()=="O")){
+			owins(2,4,6);
+		}
+	}
+	public void xwins(int a,int b,int c){
+		btns[a].setBackground(Color.ORANGE);
+		btns[b].setBackground(Color.ORANGE);
+		btns[c].setBackground(Color.ORANGE);
+		label.setText("X Wins!");
+		label.setForeground(Color.RED);
+		for (int i=0;i<9;i++) {
+			btns[i].setEnabled(false);
+		}
+	}
+	public void owins(int a,int b,int c){
+		btns[a].setBackground(Color.ORANGE);
+		btns[b].setBackground(Color.ORANGE);
+		btns[c].setBackground(Color.ORANGE);
+		label.setText("O Wins!");
+		label.setForeground(Color.BLUE);
+		for (int i=0;i<9;i++) {
+			btns[i].setEnabled(false);
+		}
+	}	
+}	
