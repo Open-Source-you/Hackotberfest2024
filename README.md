@@ -1,4 +1,4 @@
-#  Hacktoberfest 2022 Is Awesome🔥
+#  Hacktoberfest 2024 Is Awesome🔥
 ![image](https://user-images.githubusercontent.com/70385488/192114009-0830321a-d227-4a4d-8411-6c03b54d7ce6.png)
 
 <div align="center">
@@ -46,7 +46,7 @@ Star the repository by pressing the topmost-right button to start your wonderful
 
 ### 1. Fork it :fork_and_knife:
 
-You can get your own fork/copy of [HacktoberFest-2022](https://github.com/Open-Source-you/Hackotberfest2022 by using the <a href="https://github.com/Open-Source-you/HacktoberFest2022/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
+You can get your own fork/copy of [HacktoberFest-2024](https://github.com/Open-Source-you/Hackotberfest2022 by using the <a href="https://github.com/Open-Source-you/HacktoberFest2022/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
 
 
 ### 2. Clone it :busts_in_silhouette:
@@ -60,10 +60,10 @@ $ git clone https://github.com/Open-Source-you/Hackotberfest2022.git
 ```
 
 > This makes a local copy of the repository in your machine.
-Once you have cloned the `Hacktoberfest-2022` repository in Github, move to that folder first using change directory command on Linux, Mac, and Windows(PowerShell to be used).
+Once you have cloned the `Hacktoberfest-2024` repository in Github, move to that folder first using change directory command on Linux, Mac, and Windows(PowerShell to be used).
 
 ```sh
-# This will change directory to a folder Hacktoberfest-2022
+# This will change directory to a folder Hacktoberfest-2024
 $ cd Hackotberfest2022
 ```
 
@@ -75,14 +75,14 @@ Run the following commands to see that *your local copy* has a reference to *you
 
 ```sh
 $ git remote -v
-origin  https://github.com/Your_Username/Hacktoberfest-2022.git (fetch)
-origin  https://github.com/Your_Username/Hacktoberfest-2022.git (push)
+origin  https://github.com/Your_Username/Hacktoberfest-2024.git (fetch)
+origin  https://github.com/Your_Username/Hacktoberfest-2024.git (push)
 ```
 
-Now, let's add a reference to the original [Hacktoberfest-2022]https://github.com/Open-Source-you/Hackotberfest2022) repository using
+Now, let's add a reference to the original [Hacktoberfest-2024]https://github.com/Open-Source-you/Hackotberfest2022) repository using
 
 ```sh
-$ git remote add upstream https://github.com/Open-Source-you/Hackotberfest2022.git
+$ git remote add upstream https://github.com/Open-Source-you/Hackotberfest2024.git
 ```
 
 > This adds a new remote named ***upstream***.
@@ -90,18 +90,18 @@ See the changes using
 
 ```sh
 $ git remote -v
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (fetch)
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (push)
-upstream  https://github.com/Remote_Username/Hacktoberfest-2022.git (fetch)
-upstream  https://github.com/Remote_Username/Hacktoberfest-2022.git (push)
+origin    https://github.com/Your_Username/Hacktoberfest-2024.git (fetch)
+origin    https://github.com/Your_Username/Hacktoberfest-2024.git (push)
+upstream  https://github.com/Remote_Username/Hacktoberfest-2024.git (fetch)
+upstream  https://github.com/Remote_Username/Hacktoberfest-2024.git (push)
 ```
 `In your case, you will see`
 ```sh
 $ git remote -V
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (fetch)
-origin    https://github.com/Your_Username/Hacktoberfest-2022.git (push)
-upstream  https://github.com/kishanrajput23/Hacktoberfest-2022.git (fetch)
-upstream  https://github.com/kishanrajput23/Hacktoberfest-2022.git (push)
+origin    https://github.com/Your_Username/Hacktoberfest-2024.git (fetch)
+origin    https://github.com/Your_Username/Hacktoberfest-2024.git (push)
+upstream  https://github.com/kishanrajput23/Hacktoberfest-2024.git (fetch)
+upstream  https://github.com/kishanrajput23/Hacktoberfest-2024.git (push)
 ```
 
 ### 4. Sync it :recycle:
@@ -116,7 +116,7 @@ $ git fetch --all --prune
 $ git checkout main
 # Reset local `main` branch to match the `upstream` repository's `main` branch
 $ git reset --hard upstream/main
-# Push changes to your forked `Hacktoberfest-2021` repo
+# Push changes to your forked `Hacktoberfest-2024` repo
 $ git push origin main
 ```
 
