@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Word Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+
+        .game-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .scrambled-word {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #ff6600;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .restart {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #007bff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Guess the Word!</h1>
+        <div class="scrambled-word" id="scrambledWord"></div>
+        <input type="text" id="userInput" placeholder="Type your guess here">
+        <button onclick="checkGuess()">Submit</button>
+        <div class="message" id="message"></div>
+        <div class="restart" id="restart" onclick="startGame()">Restart Game</div>
+    </div>
+
+    <script>
+        const words = ["javascript", "coding", "development", "frontend", "backend", "algorithm", "database", "internet"];
+        let chosenWord = "";
+        let scrambled = "";
+
+        function shuffleWord(word) {
+            let shuffledWord = word.split('').sort(() => 0.5 - Math.random()).join('');
+            return shuffledWord;
+        }
+
+        function startGame() {
+            // Select a random word from the list
+            chosenWord = words[Math.floor(Math.random() * words.length)];
+            scrambled = shuffleWord(chosenWord);
+
+            // Display the scrambled word
+            document.getElementById("scrambledWord").innerText = scrambled;
+            document.getElementById("message").innerText = "";
+            document.getElementById("userInput").value = "";
+        }
+
+        function checkGuess() {
+            const userGuess = document.getElementById("userInput").value.toLowerCase();
+            const messageElement = document.getElementById("message");
+
+            if (userGuess === chosenWord) {
+                messageElement.innerText = "Correct! Well done!";
+                messageElement.classList.remove("wrong");
+                messageElement.classList.add("correct");
+            } else {
+                messageElement.innerText = "Wrong guess! Try again.";
+                messageElement.classList.remove("correct");
+                messageElement.classList.add("wrong");
+            }
+        }
+
+        // Start the game when the page loads
+        window.onload = startGame;
+    </script>
+</body>
+</html>
