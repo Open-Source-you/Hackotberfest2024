@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>2048</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="how">
+        <span>How to Play?</span>
+        <p>Use your <i><u>arrow keys</u></i> to move the tiles. Tiles with the same number merge into one when they
+            touch. Add them up to reach <b>2048</b>!</p>
+        <div class="buttons">
+            <button type="button" name="up">&#8593;</button><br />
+            <button type="button" name="left">&#8592;</button>
+            <button type="button" name="down">&#8595;</button>
+            <button type="button" name="right">&#8594;</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1 id="score"><font id="text-score">Score : </font><font id="num-score">0</font></h1>
+        <table border="1">
+            <tr>
+                <td id="00"></td>
+                <td id="01"></td>
+                <td id="02"></td>
+                <td id="03"></td>
+            </tr>
+            <tr>
+                <td id="10"></td>
+                <td id="11"></td>
+                <td id="12"></td>
+                <td id="13"></td>
+            </tr>
+            <tr>
+                <td id="20"></td>
+                <td id="21"></td>
+                <td id="22"></td>
+                <td id="23"></td>
+            </tr>
+            <tr>
+                <td id="30"></td>
+                <td id="31"></td>
+                <td id="32"></td>
+                <td id="33"></td>
+            </tr>
+        </table>
+
+        <div id="gameOver">
+            <span>Game Over !!</span><br>
+            <button id="reset" onclick="restart()">Try Again</button>
+        </div>
+
+    </div>
+
+    <button class="btn-translate">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+            xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 469.333 469.333"
+            style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+            <g>
+                <g>
+                    <g>
+                        <g>
+                            <path
+                                d="M253.227,300.267L253.227,300.267L199.04,246.72l0.64-0.64c37.12-41.387,63.573-88.96,79.147-139.307h62.507V64H192
+                            V21.333h-42.667V64H0v42.453h238.293c-14.4,41.173-36.907,80.213-67.627,114.347c-19.84-22.08-36.267-46.08-49.28-71.467H78.72
+                            c15.573,34.773,36.907,67.627,63.573,97.28l-108.48,107.2L64,384l106.667-106.667l66.347,66.347L253.227,300.267z"
+                                fill="#ffffff" data-original="#000000" class=""></path>
+                            <path d="M373.333,192h-42.667l-96,256h42.667l24-64h101.333l24,64h42.667L373.333,192z M317.333,341.333L352,248.853
+                            l34.667,92.48H317.333z" fill="#ffffff" data-original="#000000" class=""></path>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+                <g>
+                </g>
+            </g>
+        </svg>
+    </button>
+
+</body>
+
+</html>
+
+<script src="./app.js"></script>
