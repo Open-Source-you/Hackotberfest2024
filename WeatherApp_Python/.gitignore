@@ -1,0 +1,17 @@
+./venv
+__pycache__
+# Ignore virtual environments
+venv/
+.Venv/
+ENV/
+env/
+.VENV/
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+*.log
+venv
