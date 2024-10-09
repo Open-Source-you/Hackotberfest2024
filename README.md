@@ -40,16 +40,16 @@ flowchart LR
     
  ```
 
-### 0. Star The Repository :star2:
+### 1. Star The Repository :star2:
 
 Star the repository by pressing the topmost-right button to start your wonderful journey.
 
-### 1. Fork it :fork_and_knife:
+### 2. Fork it :fork_and_knife:
 
 You can get your own fork/copy of [HacktoberFest-2024](https://github.com/Open-Source-you/Hackotberfest2022 by using the <a href="https://github.com/Open-Source-you/HacktoberFest2022/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
 
 
-### 2. Clone it :busts_in_silhouette:
+### 3. Clone it :busts_in_silhouette:
 
 `NOTE: commands are to be executed on Linux, Mac, and Windows(using Powershell)`
 
@@ -69,7 +69,7 @@ $ cd Hackotberfest2022
 
 Move to this folder for all other commands.
 
-### 3. Set it up :arrow_up:
+### 4. Set it up :arrow_up:
 
 Run the following commands to see that *your local copy* has a reference to *your forked remote repository* in Github :octocat:
 
@@ -104,7 +104,7 @@ upstream  https://github.com/kishanrajput23/Hacktoberfest-2024.git (fetch)
 upstream  https://github.com/kishanrajput23/Hacktoberfest-2024.git (push)
 ```
 
-### 4. Sync it :recycle:
+### 5. Sync it :recycle:
 
 Always keep your local copy of the repository updated with the original repository.
 Before making any changes and/or in an appropriate interval, run the following commands *carefully* to update your local repository.
@@ -120,11 +120,11 @@ $ git reset --hard upstream/main
 $ git push origin main
 ```
 
-### 5. Ready Steady Go... :turtle: :rabbit2:
+### 6. Ready Steady Go... :turtle: :rabbit2:
 
 Once you have completed these steps, you are ready to start contributing by checking our `Good First Issue` Issues and creating [pull requests](https://github.com/kishanrajput23/Hacktoberfest-2022/pulls).
 
-### 6. Create a new branch :bangbang:
+### 7. Create a new branch :bangbang:
 
 Whenever you are going to contribute. Please create a separate branch using command and keep your `main` branch clean (i.e. synced with remote branch).
 
