@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-3fU5k2Hx41lFi5F5Psb5wKnp8n/+D4wEhpZeMCI/brXVtpyKmuHTEu3R2JqD0XpEzz7f2anrmTbKVGmiGQ3r4Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #e5e5e5;
+            --transp-white-1: rgba(255, 255, 255, 0.25);
+            --transp-white-2: rgba(255, 255, 255, 0.18);
+            --blue-1: #62b8f5;
+            --blue-2: #4475ef;
+            --shadow: rgba(3, 46, 87, 0.2);
+        }
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed; /* Ensures the background image remains fixed while scrolling */
+        }
+        * {
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(5,41,51);
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 72% 25%;
+            grid-gap: 3%;
+        }
+
+        .container {
+                width: 90%; /* Adjust the width as needed */
+                background: rgba(255, 255, 255, 0.2); /* Reduce transparency */
+                backdrop-filter: blur(5px); /* Reduce the blur effect */
+                margin: 5rem auto;
+                padding: 2rem;
+                border: 2px solid rgba(255, 255, 255, 0.2); /* Adjust border transparency */
+                border-radius: 10px;
+                color: rgb(5, 41, 51);
+                height: auto; /* Adjust height as needed */
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Increase box shadow */
+            }
+
+
+
+
+        input, .btn::placeholder {
+            background-color: transparent;
+            padding: .5rem;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid white;
+        }
+
+        .btn {
+            padding: .5rem 1rem;
+            border: 2px solid #04009A;
+            cursor: pointer;
+            transition: .3s;
+            color: var(--blue-2);
+            background-color: transparent;
+            border-radius: 0.3em;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: rgb(5,41,51);
+            color: #fff;
+        }
+
+        .weather {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: auto; /* Adjust height as needed */
+            background: rgba(255, 255, 255, 0.8); /* Reduce transparency */
+            backdrop-filter: blur(5px); /* Reduce the blur effect */
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem; /* Add some space between weather blocks */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Increase box shadow */
+        }
+
+        .left {
+            width: 100%;
+            padding: .3rem;
+            padding-bottom: 0;
+            border-radius: 10px 0 0 10px;
+            height: 220px;
+            line-height: 3;
+            text-transform: uppercase;
+            background: var(--transp-white-2);
+            backdrop-filter: blur(10px);
+        }
+
+        .temp {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .city {
+            margin-top: -22px;
+            text-align: center;
+        }
+
+        .right {
+            border-radius: 10px;
+            text-align: center;
+            height: 220px;
+            width: 100%;
+            border-radius: 0 10px 10px 0;
+            line-height: 2.5;
+            background: var(--transp-white-2);
+            backdrop-filter: blur(10px);
+        }
+
+        .icon {
+            height: 85px;
+            padding: .5rem;
+            border-radius: 0 10px 0 0;
+            color: #04009A;
+        }
+
+        .condition {
+            height: 135px;
+            border-radius: 0 0 10px;
+            color: rgb(5,41,51);
+            font-size: 20px;
+            margin-top:10px;
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .weather {
+                flex-direction: column;
+                height: auto;
+            }
+            .container {
+                text-align: center;
+                width: 90%;
+                height: 90%;
+            }
+            .right {
+                margin-top: .5rem;
+                margin-left: 0;
+            }
+            form {
+                grid-template-columns: 100%;
+            }
+        }
+        .weather-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Add any additional styling as needed */
+}
+
+.weather {
+    width: 48%; /* Adjust the width as needed */
+    margin-bottom: 1rem; /* Add some space between weather blocks */
+    /* Add any additional styling as needed */
+}
+
+@media only screen and (max-width: 700px) {
+    .weather {
+        width: 100%; /* Adjust for smaller screens */
+    }
+}
+/* Style for the search button */
+.btn {
+    padding: 0.5rem 1rem;
+    border: 2px solid #04009A;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--blue-2);
+    background-color: transparent;
+    border-radius: 15px; /* Add border radius */
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: rgb(5, 41, 51);
+    color: #fff;
+}
+
+/* Additional styling for the input field */
+input[type="text"] {
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 15px;
+    outline: none;
+    border: 2px solid #04009A;
+    width: 70%; /* Adjust width as needed */
+    font-size: 16px;
+    color: #04009A; /* Text color */
+}
+
+/* Styling for the weather section */
+.weather1 {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border-radius: 15px; /* Add border radius */
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.weather1 .left {
+    width: 60%;
+    padding: 0.3rem;
+    padding-bottom: 0;
+    border-radius: 15px 0 0 15px; /* Add border radius */
+    height: 220px;
+    line-height: 3;
+    text-transform: uppercase;
+    background: var(--transp-white-2);
+    backdrop-filter: blur(10px);
+}
+
+.weather1 .right {
+    width: 40%;
+    border-radius: 0 15px 15px 0; /* Add border radius */
+    text-align: center;
+    height: 220px;
+    line-height: 2.5;
+    background: var(--transp-white-2);
+    backdrop-filter: blur(10px);
+}
+
+.weather1 .icon {
+    height: 85px;
+    padding: 0.5rem;
+    border-radius: 0 15px 0 0; /* Add border radius */
+    color: #04009A;
+}
+
+.weather1 .condition {
+    height: 135px;
+    border-radius: 0 0 15px;
+    color: rgb(5, 41, 51);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+    </style>
+
+</head>
+
+
+<body>
+    <div class="container">
+        <h1 class="heading">Get Weather For any City With API</h1>
+        <form action="/pred" method="post">
+            <input type="text" name="city" placeholder="Enter City" style="margin-bottom:16px; border-radius:15px;">
+            <button type="submit" class="btn btn-primary" style="margin-bottom:16px;">Search</button>
+        </form>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Attention!</strong>
+                {{ messages[0] }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endif %}
+        {% endwith %}
+
+
+        <!-- Weather display section -->
+        <!--temperature-->
+        <div class="weather1" >
+            <div class="left">
+                <h2 class="temp">Temp: {{ temp }}&#176; C</h2>
+                <h2 class="city">{{ city }}</h2> <br>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="http://openweathermap.org/img/w/{{ icon }}.png" width="120px"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ description }}</p>
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+            <!-- Weather Alerts -->
+                {% if hot_alert %}
+                  <div class="alert alert-danger" role="alert">
+                    {{ hot_alert }}
+                  </div>
+                {% endif %}
+
+                {% if cold_alert %}
+                  <div class="alert alert-info" role="alert">
+                    {{ cold_alert }}
+                  </div>
+                {% endif %}
+        </div>
+
+<!--        flex only below two weathers them with space between-->
+        <div class="weather-container">
+        {% if wind_speed %}
+        <!--wind speed-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Wind: <br> {{ wind_speed }} m/s</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='wind_icon.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!--humidity-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Humidity: <br> {{ humidity }} %</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='hum_icon.png')}}" width="120px" style="width:100px; height:100px"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+
+<!--          now these two flex and space bw-->
+        <!--max temp-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Max Temp: <br> {{ max_temp }} C</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='temp_icon.png')}}" width="120px" style="width:100px; height:100px"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        <!--min temp-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Min Temp: <br> {{ min_temp }} C</h3>
+]            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='min_temp.png')}}" width="120px" style="width:100px; height:100px"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+
+<!--        now these two-->
+        {% if pressure %}
+        <!--pressure-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Pressure: <br> {{ pressure }} hPa</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='img_pres.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if precipitation %}
+        <!--precipitation-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Precipitation: <br> {{ precipitation }} mm</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='img_prec.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if cloudiness %}
+        <!--cloudiness-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Cloudiness: <br> {{ cloudiness }} %</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='img_cloud.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if sunrise %}
+        <!--sunset-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Sunrise: <br> {{ sunrise }}</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='sunrise.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if sunset %}
+        <!--cloudiness-->
+        <div class="weather">
+            <div class="left">
+                <h3 class="temp">Sunset: <br> {{ sunset }}</h3>
+            </div>
+            <div class="right">
+                <div class="icon">
+                    <p><img src="{{url_for('static',filename='sunset.png')}}" width="120px" style="width:100px; height:100px;"></p>
+                </div>
+                <div class="condition">
+                    <p>{{ day }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        </div>
+    </div>
+<!-- JavaScript for changing background image with animation -->
+<script>
+    window.onload = function() {
+        const images = ['img_1.png', 'img_2.png', 'img_3.png', 'img_4.png', 'img_5.png', 'img_6.png'];
+        let currentIndex = 0;
+        let bgImageChanged = false;
+
+        // Function to change background image
+        function changeBackground() {
+            const body = document.body;
+            const nextIndex = (currentIndex + 1) % images.length;
+            const nextImage = new Image();
+            nextImage.src = `/static/${images[nextIndex]}`;
+            nextImage.onload = function() {
+                body.style.backgroundImage = `url("${nextImage.src}")`;
+                currentIndex = nextIndex;
+            };
+        }
+
+        // Function to set background image to image_url once it's obtained
+        function setBackgroundImage(imageUrl) {
+            const body = document.body;
+            body.style.backgroundImage = `url("${imageUrl}")`;
+            bgImageChanged = true;
+        }
+
+        // Check if image_url is available, then set the background image without animation
+        const image_url = "{{ image_url }}"; // Assuming you are passing image_url as a variable from the Flask backend
+        if (image_url) {
+            setBackgroundImage(image_url);
+        } else {
+            // Set transition for smooth background image change
+            document.body.style.transition = 'background-image 1s ease-in-out';
+
+            // Start changing background image every 3 seconds
+            setInterval(function() {
+                if (!bgImageChanged) {
+                    changeBackground();
+                }
+            }, 1000);
+        }
+    }
+</script>
+
+</body>
+</html>
