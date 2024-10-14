@@ -1,0 +1,98 @@
+# pyproject.toml
+
+[build-system]
+# Specify the build system requirements
+# These are the minimum requirements for building the project
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Rock-Paper-Scissors"
+dynamic = ["version"]
+# A short description of your project (required)
+description = "A machine learning project to play Rock Paper Scissors using different strategies"
+# Longer description, can be the same as README content
+readme = "README.md"
+# Project license
+license = {file = "LICENSE"}
+# Minimum Python version required
+requires-python = ">=3.7"
+authors = [
+    {name = "David Mickelson", email = "davidpmickelson@gmail.com"},
+]
+keywords = ["rock-paper-scissors", "machine-learning", "ai", "game"]
+# Project classifiers (see https://pypi.org/classifiers/)
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+# Dependencies
+dependencies = [
+    "pydantic_settings>=2.0.0",
+    "pytest>=6.2.5",
+    "python-dotenv>=0.19.0",
+    "keras>=2.6.0,<3.0.0",
+    "tensorflow>=2.6.0,<3.0.0",
+    "numpy>=1.19.0,<2.0.0"
+]
+
+# Optional dependencies
+# These can be installed using pip install your-project[dev]
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.2.5",
+    "black>=21.12b0"
+    "flake8>=4.0.1",
+    # Add more development dependencies as needed
+]
+
+# Entry points for your project (if it's a command-line tool)
+[project.scripts]
+rps = "RPS:player"
+
+# URLs associated with the project
+[project.urls]
+Homepage = "https://github.com/dmickelson/rock-paper-scissor"
+Repository = "https://github.com/dmickelson/rock-paper-scissor.git"
+
+
+# Tool configurations
+[tool.setuptools]
+packages = ["RPS"]
+
+[tool.setuptools_scm]
+# Configuration for setuptools_scm (automatic versioning)
+write_to = "rps/_version.py"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203"]
+max-complexity = 10
+exclude = [
+    "venv",
+    "test/data/"
+]
+
+[tool.isort]
+# Configuration for isort import sorter
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.pytest.ini_options]
+# Configuration for pytest
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
