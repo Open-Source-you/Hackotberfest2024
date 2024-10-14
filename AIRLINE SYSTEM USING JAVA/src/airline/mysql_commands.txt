@@ -1,0 +1,87 @@
+This file contains information on creating a database for the Airline Management System project. 
+It's assumed that this process is performed at the command line.
+
+Tasks:
+
+1. Create Database
+SQL Command: 
+create database ams;
+
+2. Switch to the ams database
+SQL Command:
+use ams;
+
+3. Create cancellation table
+SQL Command:
+create table cancellation (
+    pnr_no varchar(255),
+    cancellaton_no varchar(255),
+    cancellation_data varchar(255),
+    fli_code varchar(255)
+);
+
+4. Create flight table
+SQL Command:
+create table flight (
+    f_code varchar(255),
+    f_name varchar(255),
+    src varchar(255),
+    dst varchar(255)
+);
+
+5. Create login table
+SQL Command:
+create table login (
+    username varchar(255),
+    password varchar(255)
+);
+
+6. Create passenger table
+SQL Command:
+create table passenger (
+    pnr_no varchar(255),
+    address varchar(255),
+    nationality varchar(255),
+    name varchar(255),
+    gender varchar(255),
+    ph_no varchar(255),
+    passport_no varchar(255),
+    fl_code varchar(255)
+);
+
+7. Create payment table
+SQL Command:
+create table payment (
+    pnr_no varchar(255),
+    ph_no varchar(255),
+    cheque_no varchar(255),
+    card_no varchar(255),
+    paid_amt varchar(255),
+    pay_date varchar(255)
+);
+
+8. Create reservation table
+SQL Command:
+create table reservation (
+    pnr_no varchar(255),
+    ticket_id varchar(255),
+    f_code varchar(255),
+    jny_date varchar(255),
+    jny_time varchar(255),
+    src varchar(255),
+    dst varchar(255)
+);
+
+9. Create sector table
+SQL Command:
+create table sector (
+    flight_code varchar(255),
+    capacity varchar(255),
+    class_code varchar(255),
+    class_name varchar(255)
+);
+
+10. Insert values into login table 
+insert into login
+values ('admin', '12345');
+
