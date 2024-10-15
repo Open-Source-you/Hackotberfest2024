@@ -1,28 +1,106 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bulb</title>
-    <link rel="stylesheet" href="../assets/css/bulb.css">
+    <title>Advanced Bulb Switch</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f4f4f4;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #Image {
+            width: 200px;
+            height: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #Image:hover {
+            transform: scale(1.1);
+        }
+
+        .para {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .switches {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #Switch {
+            width: 100px;
+            height: 200px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #Switch:hover {
+            transform: rotate(10deg);
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="box">
         <img id="Image" onclick="turnOnOff()"
-            src="https://t4.ftcdn.net/jpg/00/51/20/61/240_F_51206166_RHIGZE9tHv5v5nhgktJJOJLSzMZvU85m.jpg">
+            src="https://t4.ftcdn.net/jpg/00/51/20/61/240_F_51206166_RHIGZE9tHv5v5nhgktJJOJLSzMZvU85m.jpg" alt="Bulb">
     </div>
 
     <h1 class="para">Click on the switch/bulb image to turn it ON/OFF</h1>
 
     <div class="switches">
         <img id="Switch" onclick="turnOnOff()"
-            src="https://cdn.pixabay.com/photo/2012/04/18/13/25/light-switch-37017__340.png">
+            src="https://cdn.pixabay.com/photo/2012/04/18/13/25/light-switch-37017__340.png" alt="Switch">
     </div>
 
-    <script src="../assets/js/bulb.js"></script>
+    <script>
+        let isBulbOn = false;
+
+        function turnOnOff() {
+            const bulbImage = document.getElementById('Image');
+            const switchImage = document.getElementById('Switch');
+
+            if (isBulbOn) {
+                // Turn the bulb OFF
+                bulbImage.src = "https://t4.ftcdn.net/jpg/00/51/20/61/240_F_51206166_RHIGZE9tHv5v5nhgktJJOJLSzMZvU85m.jpg";
+                switchImage.src = "https://cdn.pixabay.com/photo/2012/04/18/13/25/light-switch-37017__340.png";
+                isBulbOn = false;
+            } else {
+                // Turn the bulb ON
+                bulbImage.src = "https://t3.ftcdn.net/jpg/02/10/44/80/240_F_210448062_UulIZvbWb6yNzy94otSuDnxInuXMxyrQ.jpg";
+                switchImage.src = "https://cdn.pixabay.com/photo/2012/04/18/13/27/light-switch-37018__340.png";
+                isBulbOn = true;
+            }
+        }
+    </script>
 </body>
 
 </html>

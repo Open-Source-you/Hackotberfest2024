@@ -5,12 +5,96 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/rock-paper-scissors.css">
     <title>Rock Paper Scissors</title>
+
+    <style>
+        /* Basic Styling for the Game */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .score_board {
+            font-size: 24px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .identity_card {
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .result {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .choice {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .choice img {
+            width: 100px;
+            transition: transform 0.2s ease;
+        }
+
+        .choice img:hover {
+            transform: scale(1.1);
+        }
+
+        .order {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,17 +104,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-3 ">
-                <div class="card" style="width: 12rem;">
-                    <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                    <h2></h2>
-                    <div class="card-body">
-                        <hr>
-                        <h4>User's<br>Choice</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 ">
+            <div class="col-12">
                 <div class="score_board">
                     <div id="user_id" class="identity_card">User</div>
                     <div id="comp_id" class="identity_card">Comp</div>
@@ -38,56 +112,115 @@
                 </div>
 
                 <div class="result">
-                    <p>Let's Test Your Luck</p>
+                    <p id="result_text">Let's test your luck!</p>
                 </div>
 
                 <div class="choices">
                     <div class="choice">
-                        <img id="r" src="../assets/Images/r-p-s/rock2.png" alt="Rock">
+                        <img id="r" src="https://img.icons8.com/color/100/000000/rock.png" alt="Rock">
                     </div>
                     <div class="choice">
-                        <img id="p" src="../assets/Images/r-p-s/paper2.png" alt="Paper">
+                        <img id="p" src="https://img.icons8.com/color/100/000000/paper.png" alt="Paper">
                     </div>
                     <div class="choice">
-                        <img id="s" src="../assets/Images/r-p-s/sessior2.png" alt="Sessior">
+                        <img id="s" src="https://img.icons8.com/color/100/000000/scissors.png" alt="Scissors">
                     </div>
                 </div>
 
                 <div class="order">
-                    <p>Make Your Move.</p>
+                    <p>Make your move.</p>
                 </div>
 
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary btn-lg" id="reset_button">Reset</button>
-                </div>
-            </div>
-            <div class="col-3 ">
-                <div class="card card_right justify-content-center" style="width: 12rem;">
-                    <!--<img class="card-img-top" src="..." alt="Card image cap">-->
-                    <h2></h2>
-                    <div class="card-body">
-                        <hr>
-                        <h4>Computer's Choice</h4>
-                    </div>
+                <div>
+                    <button id="reset_button">Reset</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        let userScore = 0;
+        let compScore = 0;
+        const userScore_span = document.getElementById("user_score");
+        const compScore_span = document.getElementById("comp_score");
+        const result_p = document.getElementById("result_text");
+        const rock_img = document.getElementById("r");
+        const paper_img = document.getElementById("p");
+        const scissors_img = document.getElementById("s");
+        const reset_button = document.getElementById("reset_button");
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        function getComputerChoice() {
+            const choices = ['r', 'p', 's'];
+            const randomNumber = Math.floor(Math.random() * 3);
+            return choices[randomNumber];
+        }
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+        function convertToWord(letter) {
+            if (letter === "r") return "Rock";
+            if (letter === "p") return "Paper";
+            return "Scissors";
+        }
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-    -->
-    <script src="../assets/js/rock-paper-scissors.js"></script>
+        function win(userChoice, computerChoice) {
+            userScore++;
+            userScore_span.innerHTML = userScore;
+            result_p.innerHTML = `You chose ${convertToWord(userChoice)}. Computer chose ${convertToWord(computerChoice)}. You win! 🎉`;
+        }
+
+        function lose(userChoice, computerChoice) {
+            compScore++;
+            compScore_span.innerHTML = compScore;
+            result_p.innerHTML = `You chose ${convertToWord(userChoice)}. Computer chose ${convertToWord(computerChoice)}. You lose! 😢`;
+        }
+
+        function draw(userChoice, computerChoice) {
+            result_p.innerHTML = `You both chose ${convertToWord(userChoice)}. It's a draw! 🤝`;
+        }
+
+        function game(userChoice) {
+            const computerChoice = getComputerChoice();
+            switch (userChoice + computerChoice) {
+                case "rs":
+                case "pr":
+                case "sp":
+                    win(userChoice, computerChoice);
+                    break;
+                case "rp":
+                case "ps":
+                case "sr":
+                    lose(userChoice, computerChoice);
+                    break;
+                default:
+                    draw(userChoice, computerChoice);
+                    break;
+            }
+        }
+
+        function main() {
+            rock_img.addEventListener('click', function () {
+                game("r");
+            });
+
+            paper_img.addEventListener('click', function () {
+                game("p");
+            });
+
+            scissors_img.addEventListener('click', function () {
+                game("s");
+            });
+
+            reset_button.addEventListener('click', function () {
+                userScore = 0;
+                compScore = 0;
+                userScore_span.innerHTML = userScore;
+                compScore_span.innerHTML = compScore;
+                result_p.innerHTML = "Let's test your luck!";
+            });
+        }
+
+        main();
+    </script>
+
 </body>
 
 </html>

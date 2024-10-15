@@ -1,20 +1,29 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="../assets/css/color-flipper.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Background Color : <span id="color">#111</span></h1>
-            <br>
-            <button id="btn">Click Me</button>
-        </div>
-        <section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Advanced Color Flipper</title>
+    <!-- External CSS for styles -->
+    <link rel="stylesheet" href="color-flipper.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Background Color: <span id="color">#111</span></h1>
+        <button id="btn" aria-label="Change Background Color" class="btn">Click Me</button>
+    </main>
+
+    <footer>
+        <section class="waves">
             <div class="wave wave1"></div>
             <div class="wave wave2"></div>
             <div class="wave wave3"></div>
             <div class="wave wave4"></div>
         </section>
+    </footer>
 
-    <script src="../assets/js/color-flipper.js"></script>
-    </body>
+    <!-- External JavaScript for logic -->
+    <script src="color-flipper.js" defer></script>
+</body>
 </html>
