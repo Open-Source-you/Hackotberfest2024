@@ -36,26 +36,6 @@ document.getElementById("sign").addEventListener("click", () => {
         input.innerText = `-${input.innerText}`;
     }
 });
-
-document.querySelectorAll(".amt").forEach((element) => {
-    element.addEventListener("click", () => {
-        if (input.innerText) {
-            if (tmp.innerText) {
-                tmp.innerText = `${tmp.innerText} ${input.innerText} ${element.innerText}`;
-            } else {
-                tmp.innerText = `${input.innerText} ${element.innerText}`;
-            }
-        } else if (tmp.innerText.slice(-1).match(/-|\+|\*|\//)) {
-            let string = tmp.innerText.slice(0, -1);
-            string += element.innerText;
-
-            tmp.innerText = string;
-        }
-
-        empty(input);
-    });
-});
-
 document.getElementById("result").addEventListener("click", () => {
     if (input.innerText) {
         input.innerText = eval(tmp.innerText + input.innerText);
