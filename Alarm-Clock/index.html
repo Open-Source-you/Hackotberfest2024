@@ -1,37 +1,82 @@
-<!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Alarm Clock in JavaScript | CodingNepal</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="wrapper">
-      <img src="./files/clock.svg" alt="clock">
-      <h1>00:00:00 PM</h1>
-      <div class="content">
-        <div class="column">
-          <select>
-            <option value="Hour" selected disabled hidden>Hour</option>
-          </select>
-        </div>
-        <div class="column">
-          <select>
-            <option value="Minute" selected disabled hidden>Minute</option>
-          </select>
-        </div>
-        <div class="column">
-          <select>
-            <option value="AM/PM" selected disabled hidden>AM/PM</option>
-          </select>
-        </div>
-      </div>
-      <button>Set Alarm</button>
-    </div>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Alarm Clock</title>  
+    <link rel="stylesheet" href="style.css">  
+</head>  
+<body>  
+    <div class="wrapper">  
+        <img src="./files/clock.svg" alt="clock">  
+        <h1 id="time">00:00:00 AM</h1>  
+        <div class="content">  
+            <div class="column">  
+                <label for="hour">Hour:</label>  
+                <select id="hour"></select>  
+            </div>  
+            <div class="column">  
+                <label for="minute">Minute:</label>  
+                <select id="minute"></select>  
+            </div>  
+            <div class="column">  
+                <label for="ampm">AM/PM:</label>  
+                <select id="ampm">  
+                    <option value="AM">AM</option>  
+                    <option value="PM">PM</option>  
+                </select>  
+            </div>  
+        </div>  
+        <button id="setAlarm">Set Alarm</button>  
+        <div id="alarmStatus"></div>  
+    </div>  
 
-    <!-- <script src="script.js"></script> -->
+    <script>  
+    const timeDisplay = document.getElementById('time');  
+    const hourSelect = document.getElementById('hour');  
+    const minuteSelect = document.getElementById('minute');  
+    const ampmSelect = document.getElementById('ampm');  
+    const setAlarmButton = document.getElementById('setAlarm');  
+    const alarmStatus = document.getElementById('alarmStatus');  
 
-  </body>
+    // Populate hour and minute selects  
+    for (let i = 1; i <= 12; i++) {  
+        hourSelect.add(new Option(i < 10 ? '0' + i : i, i));  
+    }  
+    for (let i = 0; i <= 59; i++) {  
+        minuteSelect.add(new Option(i < 10 ? '0' + i : i, i));  
+    }  
+
+    setAlarmButton.addEventListener('click', () => {  
+        const alarmHour = parseInt(hourSelect.value);  
+        const alarmMinute = parseInt(minuteSelect.value);  
+        const alarmAMPM = ampmSelect.value;  
+
+        let alarmTime = new Date();  
+        alarmTime.setHours(alarmHour === 12 ? 12 : (alarmHour + (alarmAMPM === 'PM' ? 12 : 0)));  
+        alarmTime.setMinutes(alarmMinute);  
+        alarmTime.setSeconds(0);  
+
+        const now = new Date();  
+        if (alarmTime <= now) {  
+          alarmTime.setDate(alarmTime.getDate() + 1); //set alarm for tomorrow if it's already passed  
+        }  
+
+        const timeDifference = alarmTime - now;  
+
+        setTimeout(() => {  
+            alarmStatus.textContent = 'Alarm ringing!';  
+            alert("Wake up!"); //Simple alert for testing. Replace with your preferred alarm method.  
+        }, timeDifference);  
+
+        alarmStatus.textContent = `Alarm set for ${alarmTime.toLocaleTimeString()}`;  
+    });  
+
+    // Update the time display every second  
+    setInterval(() => {  
+        const now = new Date();  
+        timeDisplay.textContent = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit', second:'2-digit'});  
+    }, 1000);  
+    </script>  
+</body>  
 </html>
