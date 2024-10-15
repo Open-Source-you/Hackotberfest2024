@@ -1,494 +1,54 @@
-print("Welcome to BlackIQCryption")
+import sys
 
-print("Cryption - Encroption")
-ask = str(input("What do you want ? C or E : "))
+# Encryption/Decryption Mapping
+CHAR_MAP = {
+    'a': '!', 'b': '@', 'c': '#', 'd': '$', 'e': '%', 'f': '^', 'g': '&', 'h': '*', 'i': '(', 'j': '-', 'k': '+', 'l': '=', 'm': '_',
+    'n': '/', 'o': '|', 'p': '}', 'q': '{', 'r': ']', 's': '[', 't': ')', 'u': ':', 'v': ';', 'w': ',', 'x': '>', 'y': '<', 'z': "'",
+    'A': '!', 'B': '@', 'C': '#', 'D': '$', 'E': '%', 'F': '^', 'G': '&', 'H': '*', 'I': '(', 'J': '-', 'K': '+', 'L': '=', 'M': '_',
+    'N': '/', 'O': '|', 'P': '}', 'Q': '{', 'R': ']', 'S': '[', 'T': ')', 'U': ':', 'V': ';', 'W': ',', 'X': '>', 'Y': '<', 'Z': "'",
+    ' ': ' ', '.': '.'
+}
 
-# Cryption
-if ask == "C":
-    # data
-    A = a = "!"
-    B = b = "@"
-    C = c = "#"
-    D = d = "$"
-    E = e = "%"
-    F = f = "^"
-    G = g = "&"
-    H = h = "*"
-    I = i = "("
-    J = j = "-"
-    K = k = "+"
-    L = l = "="
-    M = m = "_"
-    N = n = "/"
-    O = o = "|"
-    P = p = "}"
-    Q = q = "{"
-    R = r = "]"
-    S = s = "["
-    T = t = ")"
-    U = u = ":"
-    V = v = ";"
-    W = w = ","
-    X = x = ">"
-    Y = y = "<"
-    Z = z = "'"
+REVERSE_MAP = {v: k for k, v in CHAR_MAP.items()}
 
-    # input
-    text = str(input("Give me : "))
+# Utility functions for encryption and decryption
+def encrypt(text):
+    """Encrypts the given text using the CHAR_MAP."""
+    encrypted_text = ''.join([CHAR_MAP.get(ch, ch) for ch in text])
+    return encrypted_text
 
-    # coding
-    for chap in text:
-        # Smalls
-        if chap == "a":
-            print(a)
-        if chap == "b":
-            print(b)
-        if chap == "c":
-            print(c)
-        if chap == "d":
-            print(d)
-        if chap == "e":
-            print(e)
-        if chap == "f":
-            print(f)
-        if chap == "g":
-            print(g)
-        if chap == "h":
-            print(h)
-        if chap == "i":
-            print(i)
-        if chap == "j":
-            print(j)
-        if chap == "k":
-            print(k)
-        if chap == "l":
-            print(l)
-        if chap == "m":
-            print(m)
-        if chap == "n":
-            print(n)
-        if chap == "o":
-            print(o)
-        if chap == "p":
-            print(p)
-        if chap == "q":
-            print(q)
-        if chap == "r":
-            print(r)
-        if chap == "s":
-            print(s)
-        if chap == "t":
-            print(t)
-        if chap == "u":
-            print(u)
-        if chap == "v":
-            print(v)
-        if chap == "w":
-            print(w)
-        if chap == "x":
-            print(x)
-        if chap == "y":
-            print(y)
-        if chap == "z":
-            print(z)
-        # Capitals
-        if chap == "A":
-            print(a)
-        if chap == "B":
-            print(b)
-        if chap == "C":
-            print(c)
-        if chap == "D":
-            print(d)
-        if chap == "E":
-            print(e)
-        if chap == "F":
-            print(f)
-        if chap == "G":
-            print(g)
-        if chap == "H":
-            print(h)
-        if chap == "I":
-            print(i)
-        if chap == "J":
-            print(j)
-        if chap == "K":
-            print(k)
-        if chap == "L":
-            print(l)
-        if chap == "M":
-            print(m)
-        if chap == "N":
-            print(n)
-        if chap == "O":
-            print(o)
-        if chap == "P":
-            print(p)
-        if chap == "Q":
-            print(q)
-        if chap == "R":
-            print(r)
-        if chap == "S":
-            print(s)
-        if chap == "T":
-            print(t)
-        if chap == "U":
-            print(u)
-        if chap == "V":
-            print(v)
-        if chap == "W":
-            print(w)
-        if chap == "X":
-            print(x)
-        if chap == "Y":
-            print(y)
-        if chap == "Z":
-            print(z)
-        # Others
-        if chap == " ":
-            print(" ")
-        if chap == ".":
-            print(".")
+def decrypt(text):
+    """Decrypts the given text using the REVERSE_MAP."""
+    decrypted_text = ''.join([REVERSE_MAP.get(ch, ch) for ch in text])
+    return decrypted_text
 
-    # end
-    exiting = input()
-# cryption
-if ask == "c":
-    # data
-    A = a = "!"
-    B = b = "@"
-    C = c = "#"
-    D = d = "$"
-    E = e = "%"
-    F = f = "^"
-    G = g = "&"
-    H = h = "*"
-    I = i = "("
-    J = j = "-"
-    K = k = "+"
-    L = l = "="
-    M = m = "_"
-    N = n = "/"
-    O = o = "|"
-    P = p = "}"
-    Q = q = "{"
-    R = r = "]"
-    S = s = "["
-    T = t = ")"
-    U = u = ":"
-    V = v = ";"
-    W = w = ","
-    X = x = ">"
-    Y = y = "<"
-    Z = z = "'"
+def validate_input(option, text):
+    """Validates user input for encryption/decryption."""
+    if option not in ['C', 'E']:
+        print("Invalid option. Please choose 'C' for encryption or 'E' for decryption.")
+        sys.exit(1)
+    if not text.strip():
+        print("Input text cannot be empty.")
+        sys.exit(1)
 
-    # input
-    text = str(input("Give me : "))
+def main():
+    print("Welcome to BlackIQCryption")
+    print("Choose an option: ")
+    print("C - Cryption (Encryption)")
+    print("E - Encryotion (Decryption)")
 
-    # coding
-    for chap in text:
-        # Smalls
-        if chap == "a":
-            print(a)
-        if chap == "b":
-            print(b)
-        if chap == "c":
-            print(c)
-        if chap == "d":
-            print(d)
-        if chap == "e":
-            print(e)
-        if chap == "f":
-            print(f)
-        if chap == "g":
-            print(g)
-        if chap == "h":
-            print(h)
-        if chap == "i":
-            print(i)
-        if chap == "j":
-            print(j)
-        if chap == "k":
-            print(k)
-        if chap == "l":
-            print(l)
-        if chap == "m":
-            print(m)
-        if chap == "n":
-            print(n)
-        if chap == "o":
-            print(o)
-        if chap == "p":
-            print(p)
-        if chap == "q":
-            print(q)
-        if chap == "r":
-            print(r)
-        if chap == "s":
-            print(s)
-        if chap == "t":
-            print(t)
-        if chap == "u":
-            print(u)
-        if chap == "v":
-            print(v)
-        if chap == "w":
-            print(w)
-        if chap == "x":
-            print(x)
-        if chap == "y":
-            print(y)
-        if chap == "z":
-            print(z)
-        # Capitals
-        if chap == "A":
-            print(a)
-        if chap == "B":
-            print(b)
-        if chap == "C":
-            print(c)
-        if chap == "D":
-            print(d)
-        if chap == "E":
-            print(e)
-        if chap == "F":
-            print(f)
-        if chap == "G":
-            print(g)
-        if chap == "H":
-            print(h)
-        if chap == "I":
-            print(i)
-        if chap == "J":
-            print(j)
-        if chap == "K":
-            print(k)
-        if chap == "L":
-            print(l)
-        if chap == "M":
-            print(m)
-        if chap == "N":
-            print(n)
-        if chap == "O":
-            print(o)
-        if chap == "P":
-            print(p)
-        if chap == "Q":
-            print(q)
-        if chap == "R":
-            print(r)
-        if chap == "S":
-            print(s)
-        if chap == "T":
-            print(t)
-        if chap == "U":
-            print(u)
-        if chap == "V":
-            print(v)
-        if chap == "W":
-            print(w)
-        if chap == "X":
-            print(x)
-        if chap == "Y":
-            print(y)
-        if chap == "Z":
-            print(z)
-        # Others
-        if chap == " ":
-            print(" ")
-        if chap == ".":
-            print(".")
+    option = input("What do you want? C or E: ").strip().upper()
+    text = input("Enter your text: ").strip()
 
-    # end
-    exiting = input()
-# Encryotion
-if ask == "E":
-    # data
-    etajabo = "a"
-    ead = "b"
-    esharp = "c"
-    edolar = "d"
-    edarsad = "e"
-    etavan = "f"
-    eand = "g"
-    esetare = "h"
-    eparbaz = "i"
-    emidline = "j"
-    eplus = "k"
-    eeq = "l"
-    eunderline = "m"
-    eeslash = "n"
-    eras = "o"
-    eocbas = "p"
-    eocbaz = "q"
-    ecrobas = "r"
-    ecrobaz = "s"
-    eocbaz = "t"
-    edonogh = "u"
-    esemi = "v"
-    ecama = "w"
-    ehashbas = "x"
-    ehashbaz = "y"
-    eup = "z"
+    # Validate inputs
+    validate_input(option, text)
 
-    # input
-    text = str(input("Give me : "))
+    if option == 'C':
+        result = encrypt(text)
+        print(f"Encrypted Text: {result}")
+    elif option == 'E':
+        result = decrypt(text)
+        print(f"Decrypted Text: {result}")
 
-    # coding
-    for chap in text:
-        if chap == "!":
-            print(etajabo)
-        if chap == "@":
-            print(ead)
-        if chap == "#":
-            print(esharp)
-        if chap == "$":
-            print(edolar)
-        if chap == "%":
-            print(edarsad)
-        if chap == "^":
-            print(etavan)
-        if chap == "&":
-            print(eand)
-        if chap == "*":
-            print(esetare)
-        if chap == "(":
-            print(eparbaz)
-        if chap == "-":
-            print(emidline)
-        if chap == "+":
-            print(eplus)
-        if chap == "=":
-            print(eeq)
-        if chap == "_":
-            print(eunderline)
-        if chap == "/":
-            print(eeslash)
-        if chap == "|":
-            print(eras)
-        if chap == "}":
-            print(eocbas)
-        if chap == "{":
-            print(eocbaz)
-        if chap == "]":
-            print(ecrobas)
-        if chap == "[":
-            print(ecrobaz)
-        if chap == ")":
-            print(eocbas)
-        if chap == ":":
-            print(edonogh)
-        if chap == ";":
-            print(esemi)
-        if chap == ",":
-            print(ecama)
-        if chap == ">":
-            print(ehashbas)
-        if chap == "<":
-            print(ehashbaz)
-        if chap == "'":
-            print(eup)
-        if chap == " ":
-            print(" ")
-        if chap == ".":
-            print(".")
-
-    # end
-    exiting = input()
-# encryption
-if ask == "e":
-    # data
-    etajabo = "a"
-    ead = "b"
-    esharp = "c"
-    edolar = "d"
-    edarsad = "e"
-    etavan = "f"
-    eand = "g"
-    esetare = "h"
-    eparbaz = "i"
-    emidline = "j"
-    eplus = "k"
-    eeq = "l"
-    eunderline = "m"
-    eeslash = "n"
-    eras = "o"
-    eocbas = "p"
-    eocbaz = "q"
-    ecrobas = "r"
-    ecrobaz = "s"
-    eocbaz = "t"
-    edonogh = "u"
-    esemi = "v"
-    ecama = "w"
-    ehashbas = "x"
-    ehashbaz = "y"
-    eup = "z"
-
-    # input
-    text = str(input("Give me : "))
-
-    # coding
-    for chap in text:
-        if chap == "!":
-            print(etajabo)
-        if chap == "@":
-            print(ead)
-        if chap == "#":
-            print(esharp)
-        if chap == "$":
-            print(edolar)
-        if chap == "%":
-            print(edarsad)
-        if chap == "^":
-            print(etavan)
-        if chap == "&":
-            print(eand)
-        if chap == "*":
-            print(esetare)
-        if chap == "(":
-            print(eparbaz)
-        if chap == "-":
-            print(emidline)
-        if chap == "+":
-            print(eplus)
-        if chap == "=":
-            print(eeq)
-        if chap == "_":
-            print(eunderline)
-        if chap == "/":
-            print(eeslash)
-        if chap == "|":
-            print(eras)
-        if chap == "}":
-            print(eocbas)
-        if chap == "{":
-            print(eocbaz)
-        if chap == "]":
-            print(ecrobas)
-        if chap == "[":
-            print(ecrobaz)
-        if chap == ")":
-            print(eocbas)
-        if chap == ":":
-            print(edonogh)
-        if chap == ";":
-            print(esemi)
-        if chap == ",":
-            print(ecama)
-        if chap == ">":
-            print(ehashbas)
-        if chap == "<":
-            print(ehashbaz)
-        if chap == "'":
-            print(eup)
-        if chap == " ":
-            print(" ")
-        if chap == ".":
-            print(".")
-
-    # end
-    exiting = input()
-
-print("Done !")
-print("Finished!!")
+if __name__ == "__main__":
+    main()

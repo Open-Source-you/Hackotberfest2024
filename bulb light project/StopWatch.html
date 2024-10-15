@@ -3,30 +3,169 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/StopWatch.css">
-    <title>StopWatch</title>
+    <title>Stopwatch</title>
+    <style>
+        /* Basic Styling for the Stopwatch */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .stopwatch {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        button.btn-start {
+            background-color: #28a745;
+            color: white;
+        }
+
+        button.btn-stop {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        button.btn-reset, button.btn-lap {
+            background-color: #007bff;
+            color: white;
+        }
+
+        ul.laps {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        ul.laps li {
+            font-size: 18px;
+            padding: 5px 0;
+        }
+    </style>
 </head>
-<!-- body -->
 
 <body>
+
     <div class="container">
-        <h1 class="heading text-center">Stop Watch</h1>
-        <div class="stopwatch text-center">00:00:00</div>
-        <div class="controls text-center">
-            <button id="start" onclick="start()" class="btn">Start</button>
-            <button id="stop" onclick="stop()" class="btn hidden">Stop</button>
-            <button id="reset" onclick="reset()" class="btn hidden">Reset</button>
-            <button id="lap" onclick="lap()" class="btn hidden">Lap</button>
-            <button id="resetlaps" onclick="resetlaps()" class="btn hidden">Reset Laps</button>
+        <h1>Stopwatch</h1>
+        <div class="stopwatch">00:00:00.00</div>
+        <div class="controls">
+            <button id="start" class="btn-start" onclick="startStopWatch()">Start</button>
+            <button id="stop" class="btn-stop hidden" onclick="stopStopWatch()">Stop</button>
+            <button id="reset" class="btn-reset hidden" onclick="resetStopWatch()">Reset</button>
+            <button id="lap" class="btn-lap hidden" onclick="lapStopWatch()">Lap</button>
         </div>
-        <ul class="laps text-center font-weight-bold my-2"></ul>
+        <ul class="laps"></ul>
     </div>
-    <!-- JavaScript -->
-    <script src="../assets/js/StopWatch.js"></script>
+
+    <script>
+        // JavaScript for Stopwatch
+        let stopwatchInterval;
+        let startTime;
+        let elapsedTime = 0;
+        let isRunning = false;
+
+        const stopwatchDisplay = document.querySelector('.stopwatch');
+        const lapsContainer = document.querySelector('.laps');
+        const startButton = document.getElementById('start');
+        const stopButton = document.getElementById('stop');
+        const resetButton = document.getElementById('reset');
+        const lapButton = document.getElementById('lap');
+
+        function updateTime() {
+            const currentTime = Date.now();
+            const timeDiff = elapsedTime + (currentTime - startTime);
+            const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeDiff / 1000) % 60);
+            const milliseconds = Math.floor((timeDiff % 1000) / 10);
+
+            const displayHours = hours < 10 ? `0${hours}` : hours;
+            const displayMinutes = minutes < 10 ? `0${minutes}` : minutes;
+            const displaySeconds = seconds < 10 ? `0${seconds}` : seconds;
+            const displayMilliseconds = milliseconds < 10 ? `0${milliseconds}` : milliseconds;
+
+            stopwatchDisplay.textContent = `${displayHours}:${displayMinutes}:${displaySeconds}.${displayMilliseconds}`;
+        }
+
+        function startStopWatch() {
+            if (!isRunning) {
+                isRunning = true;
+                startTime = Date.now();
+                stopwatchInterval = setInterval(updateTime, 10);
+
+                startButton.classList.add('hidden');
+                stopButton.classList.remove('hidden');
+                resetButton.classList.add('hidden');
+                lapButton.classList.remove('hidden');
+            }
+        }
+
+        function stopStopWatch() {
+            if (isRunning) {
+                isRunning = false;
+                elapsedTime += Date.now() - startTime;
+                clearInterval(stopwatchInterval);
+
+                startButton.classList.remove('hidden');
+                stopButton.classList.add('hidden');
+                resetButton.classList.remove('hidden');
+                lapButton.classList.add('hidden');
+            }
+        }
+
+        function resetStopWatch() {
+            clearInterval(stopwatchInterval);
+            elapsedTime = 0;
+            isRunning = false;
+            stopwatchDisplay.textContent = '00:00:00.00';
+            lapsContainer.innerHTML = '';
+
+            startButton.classList.remove('hidden');
+            stopButton.classList.add('hidden');
+            resetButton.classList.add('hidden');
+            lapButton.classList.add('hidden');
+        }
+
+        function lapStopWatch() {
+            const lapTime = stopwatchDisplay.textContent;
+            const lapElement = document.createElement('li');
+            lapElement.textContent = `Lap: ${lapTime}`;
+            lapsContainer.appendChild(lapElement);
+        }
+    </script>
+
 </body>
 
 </html>
