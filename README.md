@@ -25,7 +25,7 @@ A month-long celebration from October 1st to October 31st presented by [Digital 
 [https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
 
 ## Rules :fire:
-To qualify for the __official limited edition Hacktoberfest shirt__, you must register [here](https://hacktoberfest.digitalocean.com/) and make four Pull Requests (PRs) between October 1-31, 2022 (in any time zone). PRs can be made to any public repository on GitHub, not only the ones with issues labeled Hacktoberfest. This year, the __first 40,000__ participants who complete the challenge will earn a T-shirt.
+To qualify for the __official limited edition Hacktoberfest shirt__, you must register [here](https://hacktoberfest.digitalocean.com/) and make four Pull Requests (PRs) between October 1-31, 2024 (in any time zone). PRs can be made to any public repository on GitHub, not only the ones with issues labeled Hacktoberfest. This year, the __first 40,000__ participants who complete the challenge will earn a T-shirt.
 
 ## Steps to follow :scroll:
 
@@ -46,7 +46,7 @@ Star the repository by pressing the topmost-right button to start your wonderful
 
 ### 2. Fork it :fork_and_knife:
 
-You can get your own fork/copy of [HacktoberFest-2024](https://github.com/Open-Source-you/Hackotberfest2022 by using the <a href="https://github.com/Open-Source-you/HacktoberFest2022/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
+You can get your own fork/copy of [HacktoberFest-2024](https://github.com/Open-Source-you/Hackotberfest2024 by using the <a href="https://github.com/Open-Source-you/HacktoberFest2024/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button.
 
 
 ### 3. Clone it :busts_in_silhouette:
@@ -56,7 +56,7 @@ You can get your own fork/copy of [HacktoberFest-2024](https://github.com/Open-S
 You need to clone or (download) it to local machine using
 
 ```sh
-$ git clone https://github.com/Open-Source-you/Hackotberfest2022.git
+$ git clone https://github.com/Open-Source-you/Hackotberfest2024.git
 ```
 
 > This makes a local copy of the repository in your machine.
@@ -64,7 +64,7 @@ Once you have cloned the `Hacktoberfest-2024` repository in Github, move to that
 
 ```sh
 # This will change directory to a folder Hacktoberfest-2024
-$ cd Hackotberfest2022
+$ cd Hackotberfest2024
 ```
 
 Move to this folder for all other commands.
@@ -122,7 +122,7 @@ $ git push origin main
 
 ### 6. Ready Steady Go... :turtle: :rabbit2:
 
-Once you have completed these steps, you are ready to start contributing by checking our `Good First Issue` Issues and creating [pull requests](https://github.com/kishanrajput23/Hacktoberfest-2022/pulls).
+Once you have completed these steps, you are ready to start contributing by checking our `Good First Issue` Issues and creating [pull requests](https://github.com/kishanrajput23/Hacktoberfest-2024/pulls).
 
 ### 7. Create a new branch :bangbang:
 
