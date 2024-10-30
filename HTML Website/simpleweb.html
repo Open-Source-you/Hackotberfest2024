@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Website</title>
+</head>
+<body style="font-family: Arial, sans-serif;">
+
+    <!-- Header Section -->
+    <header style="text-align: center; padding: 1em; background-color: #4CAF50; color: white;">
+        <h1>Welcome to My Simple Website</h1>
+        <p>This is made with only HTML </p>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav style="text-align: center; padding: 0.5em; background-color: #333;">
+        <a href="#home" style="color: white; margin: 0 15px; text-decoration: none;">Home</a>
+        <a href="#about" style="color: white; margin: 0 15px; text-decoration: none;">About</a>
+        <a href="#gallery" style="color: white; margin: 0 15px; text-decoration: none;">Gallery</a>
+        <a href="#testimonials" style="color: white; margin: 0 15px; text-decoration: none;">Testimonials</a>
+        <a href="#faq" style="color: white; margin: 0 15px; text-decoration: none;">FAQ</a>
+        <a href="#contact" style="color: white; margin: 0 15px; text-decoration: none;">Contact</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main style="padding: 20px;">
+        
+        <!-- Home Section -->
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our website! Here, we share tips, resources, and inspiration for beginners learning web development.</p>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Our mission is to make learning HTML and web development easy for everyone. Whether you're new or experienced, you’ll find useful content here!</p>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section id="gallery">
+            <h2>Image Gallery</h2>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <img src="https://via.placeholder.com/150" alt="Gallery Image 1" style="width: 150px; height: 150px;">
+                <img src="https://via.placeholder.com/150" alt="Gallery Image 2" style="width: 150px; height: 150px;">
+                <img src="https://via.placeholder.com/150" alt="Gallery Image 3" style="width: 150px; height: 150px;">
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <h2>What Our Visitors Say</h2>
+            <blockquote style="border-left: 4px solid #4CAF50; padding-left: 10px; margin-top: 10px;">
+                "This website made learning HTML so much easier!" – Alex
+            </blockquote>
+            <blockquote style="border-left: 4px solid #4CAF50; padding-left: 10px; margin-top: 10px;">
+                "I love the simple tutorials and examples. Perfect for beginners." – Jamie
+            </blockquote>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p><strong>Q: Do I need any prior experience?</strong></p>
+            <p>A: No prior experience is needed. We guide you through everything step-by-step.</p>
+            <p><strong>Q: Can I access resources for free?</strong></p>
+            <p>A: Yes, all our beginner resources are free and easy to follow.</p>
+        </section>
+
+        <!-- Contact Section with Message Form -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or would like to leave feedback, please fill out the form below:</p>
+            <form>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; margin: 5px 0;"><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin: 5px 0;"><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required style="width: 100%; padding: 8px; margin: 5px 0;"></textarea><br>
+
+                <button type="submit" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none;">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer style="text-align: center; padding: 1em; background-color: #4CAF50; color: white;">
+        <p>&copy; 2024 Simple Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
